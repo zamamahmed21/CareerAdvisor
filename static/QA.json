@@ -1,0 +1,39 @@
+{
+    "EI":
+    {
+        "At an event do you?":["Interect with many, including stranger","Interect with few,knowns to you"],
+        "In your social groups do you":["Keep abreast of other's happenings","Get behind on the news"],
+        "In company do you:":["Initiate conversation","Wait to be approached"],
+        "At parties do you:":["Stay late, with increasing energy","Leave early with decreased energy"],
+        "In phoning do you:":["Rarely question that it will all be said","Rehearse what you'll say"] 
+
+    },
+
+    "SN":
+    {
+        "Are you more:":["Realistic than speculative","Speculative than realistic"],
+        "Are you more interested in:":["What is actual","What is possible"],
+        "Are visionaries:":["Somewhat annoying","Rather fascinating"],
+        "Are you more frequently:":["A practical sort of person","A fanciful sort of person"],
+        "Are you more into:":["Production and distribution","Design and research"]
+    },
+
+    "FT":
+    {
+        "Are you more comfortable in making:":["Value judgments","Logical judgments"],
+        "Are you more:":["Gentle than firm","Firm than gentle"],
+        "Which rule you:":["Your heart","Your head"],
+        "Are you inclined more to be:":["Sympathetic","Fair-minded"],
+        "Do you see yourself as:":["Soft-hearted","Hard-hearted"]
+    },
+
+    "PJ":
+    {
+        "Do you tend to choose:":["Somewhat impulsive","Rather carefully"],
+        "Should one usually let events occur:":["Randomly and by chance","By careful selection and choice"],
+        "Would you say you are more:":["Easy-going","Serious and determined"],
+        "Do you tend to look up for:":["Whatever turns up","The orderly"],
+        "Are you more comfortable:":["Before a decision","After a decision"]
+    }
+
+}

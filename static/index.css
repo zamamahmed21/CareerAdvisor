@@ -1,0 +1,13 @@
+.center-h {
+  display: flex;
+  justify-content:center;
+}
+
+.center-v{
+  display: flex;
+  align-items: center;
+}
+
+.h-500{
+  height: 500;
+}

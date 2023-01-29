@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../static/js/jqueryPtypeTest.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <title>Career Advisor</title>
+    
+  </head>
+  <body>
+</nav>
+<nav class="navbar navbar-expand-lg bg-nav">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/" style="color:white">CAREER ADVISOR</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div background-color="" class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/PersonalityTest" style="color: rgb(242, 248, 242)" >Personality Test</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(242, 248, 242)">
+            Information
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#" style="color: rgb(10, 10, 10)">Personality Types</a></li>
+            <li><a class="dropdown-item" href="#" style="color: rgb(13, 14, 13)">Temperament Types</a></li>
+            <li><hr class="dropdown-divider"></li>
+            
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="color: rgb(242, 248, 242)">About Us</a>
+        </li>
+        
+        
+      </ul>
+      
+    </div>
+  </div>
+ </nav>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+<form id="pform">
+    <div class="container mt-5">
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-10 col-lg-10">
+                <div class="border">
+                    <div class="question bg-white p-3 border-bottom">
+                        <div class="d-flex flex-row justify-content-between align-items-center mcq">
+                       
+                            <h4>Choose the answer that describes you</h4></div>
+                    </div>
+                    <div class="question bg-white p-3 border-bottom" id="QA">
+                      
+                    </div> 
+                    <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
+                      <button class="btn btn-primary d-flex align-items-center btn-danger bg-nav" type="button" id="prev_btn"><i class="fa fa-angle-left mt-1 mr-1 "></i>&nbsp;previous</button>
+                      <button class="btn btn-primary border-success align-items-center btn-success bg-nav" type="button" id="next_btn">Next<i class="fa fa-angle-right ml-2"></i></button>
+                      <button class="btn btn-primary border-success align-items-center btn-success bg-nav" type="button" id="submit_btn" hidden="true">Submit<i class="fa fa-angle-right ml-2"></i></button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    </form>
+  </body>
+</html>
