@@ -1,0 +1,20 @@
+{
+    "SM":
+    {
+        "I make people feel welcome":["Strongly Agree","Agree","Disagree","Strongly Disagree"],
+        "I don't feel attacked by others":["Strongly Agree","Agree","Disagree","Strongly Disagree"],
+        "I feel my anxiety doesn't affect me much":["Strongly Agree","Agree","Disagree","Strongly Disagree"],
+        "I rarely feel sad":["Strongly Agree","Agree","Disagree","Strongly Disagree"],
+        "I am the life of the party":["Strongly Agree","Agree","Disagree","Strongly Disagree"]
+    },
+
+    "CP":
+    {
+        "I get angry easily":["Strongly Agree","Agree","Disagree","Strongly Disagree"],
+        "I like it when people are scared of me":["Strongly Agree","Agree","Disagree","Strongly Disagree"],
+        "It takes little abuse to get me angry":["Strongly Agree","Agree","Disagree","Strongly Disagree"],
+        "I often get mad":["Strongly Agree","Agree","Disagree","Strongly Disagree"],
+        "I have a strong need for power":["Strongly Agree","Agree","Disagree","Strongly Disagree"]
+    }
+
+}

@@ -15,9 +15,9 @@ def hello_world():
 
 @app.route('/PersonalityTest')
 def personality_test():
-    '''take personality test'''
+     '''take personality test'''
         
-    return render_template('personalitytest.html') 
+     return render_template('personalitytest.html') 
 
 
 @app.route('/PersonalityTypeResult',methods=["POST"])
@@ -53,6 +53,70 @@ def show_personality_test_results():
     '''show personality test results'''
     
     return render_template("personalitytestresults.html")
+
+
+
+
+
+
+
+@app.route('/TemperamentTest')
+def temperament_test():
+    '''take temperament test'''
+
+    return render_template("temperamenttest.html")
+
+@app.route('/TemperamentTypeResult',methods=["POST"])
+def calc_temperament_type_result():
+    
+    if request.method == 'POST':
+        data = request.get_json()
+        
+        # assign scores to temperament letters
+        results = {'S':0,'M':0,'C':2,'P':0}
+        for key,values in data.items():
+            for letter in results:
+                for value in values:
+                    if letter==value:
+                        results[letter]= results[letter] + 2
+                    if letter.lower()==value:
+                        results[letter]=results[letter]+ 1
+        print(results)
+        
+        # find dominant temperament type by finding the temperament with the highest score
+        t_type=''
+        greatest_no = 0
+        for letter in results:
+            if results[letter]>greatest_no:
+                greatest_no=results[letter]
+                t_type = letter
+                print(t_type)
+        
+        if t_type=='C':
+            t_type = 'Choleric'
+        elif t_type=='P':
+            t_type = 'Phlegmatic'
+        elif t_type=='S':
+            t_type = 'Sanguine'
+        elif t_type=='M':
+            t_type = 'Melancholic'
+
+    return t_type
+   
+
+
+    
+
+        
+
+@app.route('/TemperamentType/Results')
+def show_temperament_test_results():
+
+    return render_template("temperamenttestresults.html")
+
+
+
+
 
 
 @app.route('/login')
