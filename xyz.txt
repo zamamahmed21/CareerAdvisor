@@ -1,0 +1,35 @@
+INSERT INTO mbti_type (personality_type)
+VALUES 
+   ("ESTJ"),("ENTJ"),("ESFJ"),("ENFJ"), ("ISTJ"), ("ISFJ"),("INTJ"), ("INFJ");
+
+INSERT INTO temperament_career (career_id_fk, temperament_id_fk)
+VALUES 
+(1,4),
+(2,4),
+(3,4),
+(4,4),
+(5,4),
+(6,4),
+(7,4),
+(8,4);
+
+INSERT INTO temperament_career (career_name)
+VALUES 
+("Management"),
+("Business Managers"),
+("Military"),
+("Marketing"),
+("Production"),
+("Politics");
+
+
+SELECT *
+FROM ((temperament_career
+INNER JOIN temperament_type ON temperament_career.temperament_id_fk = temperament_type.temperament_id)
+INNER JOIN career ON temperament_career.career_id_fk = career.career_id)
+WHERE t_type like '%Choleric%';
+
+SELECT career_name FROM ((temperament_career
+INNER JOIN temperament_type ON temperament_career.temperament_id_fk = temperament_type.temperament_id)
+INNER JOIN career ON temperament_career.career_id_fk = career.career_id)
+WHERE t_type like '%Phlegmatic%'

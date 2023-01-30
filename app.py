@@ -116,8 +116,10 @@ def show_temperament_test_results():
 
 
 
+@app.route('/CareerReccomandation')
+def career_reccomandation():
 
-
+    return
 
 @app.route('/login')
 def login():
