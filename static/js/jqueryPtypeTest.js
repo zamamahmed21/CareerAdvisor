@@ -132,7 +132,7 @@ $("#submit_btn").click(function(){
         contentType: "application/json",
         success: function(response){ 
             // set variable's value to be able to recieve it from within local storage through jquery
-            localStorage.setItem("personality_type", response);
+            sessionStorage.setItem("personality_type", response);
             // goto this page
             window.location.href = "/PersonalityType/Results";
         } 

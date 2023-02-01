@@ -1,15 +1,15 @@
-# pylint: disable=unspecified-encoding
-
-# pylint: disable=E0401,C0116,C0303,C0114,C0304
 import json
 from flask import Flask , render_template, redirect, url_for, session
 from flask import request, send_from_directory
+
+from recommendation import Career_Recommendation
 
 app = Flask (__name__,template_folder='template',static_folder='static')
 
 
 @app.route('/')
 def hello_world():
+    
     return render_template('index.html')
     
 
@@ -53,9 +53,6 @@ def show_personality_test_results():
     '''show personality test results'''
     
     return render_template("personalitytestresults.html")
-
-
-
 
 
 
@@ -116,10 +113,31 @@ def show_temperament_test_results():
 
 
 
-@app.route('/CareerReccomandation')
-def career_reccomandation():
+@app.route('/CareerRecommendation')
+def career_recommendation():    
+    '''display career recommendation'''
 
-    return
+    return render_template("careerrecommendation.html")
+
+
+@app.route('/CareerRecommendationResult',methods=["POST"])
+def calc_career_recommendation():    
+    '''create & return career recommendations'''
+
+    data = request.get_json()
+    p_type = data['personality_type']
+    t_type = data['temperament_type']
+
+    career_rec = Career_Recommendation()
+    print("Careers for Personality Type ",p_type)
+    print(career_rec.careers_for_mbti(p_type))
+    print("Careers for Temperament Type ",t_type)
+    print(career_rec.careers_for_temperament(t_type))
+    print(career_rec.recommend_careers_for_mbti_and_temperament())
+
+    # return json containing career recommendations
+    return json.dumps({"data":career_rec.career_recommendations})
+
 
 @app.route('/login')
 def login():

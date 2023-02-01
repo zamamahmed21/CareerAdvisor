@@ -129,8 +129,8 @@ $("#submit_btn").click(function(){
         data: json,
         contentType: "application/json",
         success: function(response){ 
-            // set variable's value to be able to recieve it from within local storage through jquery
-            localStorage.setItem("Temperament_type", response);
+            // set variable's value within local storage
+            sessionStorage.setItem("temperament_type", response);
             // goto this page
             window.location.href = "/TemperamentType/Results";
         } 
