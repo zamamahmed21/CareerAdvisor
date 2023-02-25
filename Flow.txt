@@ -1,13 +1,19 @@
 ***Career recommendation according to goal***
+
 Required:
 
 Goal (user input)
 Career recommendations
+Personality Type
+Temperament Type
+
 
 Process:
 
-1)create tables of Careers of people of each type
+1)create tables of Careers of people of each type. Done
 
-2)Find suitable careers for the goal
+2)Create tables of goals & link them to careers ao that we are able to find suitable careers for a goal
 
-3)Match those careers & user's personality type with careers of people present in DB of that personality type
+3)Create table of people & link them with careers, temperament & personality types.
+
+4)Match those careers & user's personality type with careers of people present in DB of that personality type
