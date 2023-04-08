@@ -1,0 +1,366 @@
+{
+    "data": {
+        "cursor": {
+            "limit": 10,
+            "nextCursor": "MTA="
+        },
+        "results": [
+            {
+                "subcatID": "31112",
+                "subcategory": "Health, Food, Beauty, Fashion \u0026 Lifestyle",
+                "id": "31112",
+                "name": "Nikocado Avocado",
+                "image": {
+                    "picURL": "https://static1.personality-database.com/profile_images/e6a8a574c78c404d86c3fb8cbad5cc55.png"
+                },
+                "catIcon": {
+                    "picURL": "https://pdb-web-static.s3.us-east-2.amazonaws.com/category_icon/cat_15.png"
+                },
+                "subcategories": [
+                    {
+                        "id": "31112",
+                        "name": "Nikocado Avocado",
+                        "image": null,
+                        "catIcon": null
+                    }
+                ],
+                "personalities": [
+                    {
+                        "system": "Four Letter",
+                        "personality": "ESFP"
+                    },
+                    {
+                        "system": "Enneagram",
+                        "personality": "7w6"
+                    }
+                ],
+                "propertyID": "1",
+                "categoryID": "15",
+                "isMeme": false,
+                "isCharacter": false,
+                "isCelebrity": true
+            },
+            {
+                "subcatID": "10788",
+                "subcategory": "Hip Hop, Rap, Soul \u0026 R\u0026B",
+                "id": "10788",
+                "name": "Nicki Minaj",
+                "image": {
+                    "picURL": "https://static1.personality-database.com/profile_images/f4f7391fc133482ca0e4b5278c69379a.png"
+                },
+                "catIcon": {
+                    "picURL": "https://pdb-web-static.s3.us-east-2.amazonaws.com/category_icon/cat_14.png"
+                },
+                "subcategories": [
+                    {
+                        "id": "10788",
+                        "name": "Nicki Minaj",
+                        "image": null,
+                        "catIcon": null
+                    }
+                ],
+                "personalities": [
+                    {
+                        "system": "Four Letter",
+                        "personality": "ESFP"
+                    },
+                    {
+                        "system": "Enneagram",
+                        "personality": "3w4"
+                    }
+                ],
+                "propertyID": "1",
+                "categoryID": "14",
+                "isMeme": false,
+                "isCharacter": false,
+                "isCelebrity": true
+            },
+            {
+                "subcatID": "44",
+                "subcategory": "Football (Soccer)",
+                "id": "44",
+                "name": "Cristiano Ronaldo",
+                "image": {
+                    "picURL": "https://static1.personality-database.com/profile_images/df197ea51c3a49e29e130829f21532f6.png"
+                },
+                "catIcon": {
+                    "picURL": "https://pdb-web-static.s3.us-east-2.amazonaws.com/category_icon/cat_5.png"
+                },
+                "subcategories": [
+                    {
+                        "id": "44",
+                        "name": "Cristiano Ronaldo",
+                        "image": null,
+                        "catIcon": null
+                    }
+                ],
+                "personalities": [
+                    {
+                        "system": "Four Letter",
+                        "personality": "ESFP"
+                    },
+                    {
+                        "system": "Enneagram",
+                        "personality": "3w2"
+                    }
+                ],
+                "propertyID": "1",
+                "categoryID": "5",
+                "isMeme": false,
+                "isCharacter": false,
+                "isCelebrity": true
+            },
+            {
+                "subcatID": "2577",
+                "subcategory": "Classic Rock",
+                "id": "2577",
+                "name": "Freddie Mercury",
+                "image": {
+                    "picURL": "https://static1.personality-database.com/profile_images/9dd63fc80ee242fba8a8825318856959.png"
+                },
+                "catIcon": {
+                    "picURL": "https://pdb-web-static.s3.us-east-2.amazonaws.com/category_icon/cat_14.png"
+                },
+                "subcategories": [
+                    {
+                        "id": "2577",
+                        "name": "Freddie Mercury",
+                        "image": null,
+                        "catIcon": null
+                    }
+                ],
+                "personalities": [
+                    {
+                        "system": "Four Letter",
+                        "personality": "ESFP"
+                    },
+                    {
+                        "system": "Enneagram",
+                        "personality": "7w6"
+                    }
+                ],
+                "propertyID": "1",
+                "categoryID": "14",
+                "isMeme": false,
+                "isCharacter": false,
+                "isCelebrity": true
+            },
+            {
+                "subcatID": "12938",
+                "subcategory": "Kpop",
+                "id": "12938",
+                "name": "Lisa (BLACKPINK)",
+                "image": {
+                    "picURL": "https://static1.personality-database.com/profile_images/5703695935d6422ea58ec8ea7bf267d0.png"
+                },
+                "catIcon": {
+                    "picURL": "https://pdb-web-static.s3.us-east-2.amazonaws.com/category_icon/cat_29.png"
+                },
+                "subcategories": [
+                    {
+                        "id": "12938",
+                        "name": "Lisa (BLACKPINK)",
+                        "image": null,
+                        "catIcon": null
+                    }
+                ],
+                "personalities": [
+                    {
+                        "system": "Four Letter",
+                        "personality": "ESFP"
+                    },
+                    {
+                        "system": "Enneagram",
+                        "personality": "7w6"
+                    }
+                ],
+                "propertyID": "1",
+                "categoryID": "29",
+                "isMeme": false,
+                "isCharacter": false,
+                "isCelebrity": true
+            },
+            {
+                "subcatID": "1008",
+                "subcategory": "Pop \u0026 Contemporary",
+                "id": "1008",
+                "name": "Miley Cyrus",
+                "image": {
+                    "picURL": "https://static1.personality-database.com/profile_images/765eae0090fc4c4ea7d365267e80a7ec.png"
+                },
+                "catIcon": {
+                    "picURL": "https://pdb-web-static.s3.us-east-2.amazonaws.com/category_icon/cat_14.png"
+                },
+                "subcategories": [
+                    {
+                        "id": "1008",
+                        "name": "Miley Cyrus",
+                        "image": null,
+                        "catIcon": null
+                    }
+                ],
+                "personalities": [
+                    {
+                        "system": "Four Letter",
+                        "personality": "ESFP"
+                    },
+                    {
+                        "system": "Enneagram",
+                        "personality": "7w8"
+                    }
+                ],
+                "propertyID": "1",
+                "categoryID": "14",
+                "isMeme": false,
+                "isCharacter": false,
+                "isCelebrity": true
+            },
+            {
+                "subcatID": "5184",
+                "subcategory": "Greco-Roman",
+                "id": "5184",
+                "name": "Aphrodite",
+                "image": {
+                    "picURL": "https://static1.personality-database.com/profile_images/3fbfe6fa91294d3b9641281bc22eec9a.png"
+                },
+                "catIcon": {
+                    "picURL": "https://pdb-web-static.s3.us-east-2.amazonaws.com/category_icon/cat_18.png"
+                },
+                "subcategories": [
+                    {
+                        "id": "5184",
+                        "name": "Aphrodite",
+                        "image": null,
+                        "catIcon": null
+                    }
+                ],
+                "personalities": [
+                    {
+                        "system": "Four Letter",
+                        "personality": "ESFP"
+                    },
+                    {
+                        "system": "Enneagram",
+                        "personality": "2w3"
+                    }
+                ],
+                "propertyID": "1",
+                "categoryID": "18",
+                "isMeme": false,
+                "isCharacter": false,
+                "isCelebrity": true
+            },
+            {
+                "subcatID": "14677",
+                "subcategory": "Health, Food, Beauty, Fashion \u0026 Lifestyle",
+                "id": "14677",
+                "name": "Jeffree Star",
+                "image": {
+                    "picURL": "https://static1.personality-database.com/profile_images/6f104beeee784a0881d6ac00b27dc4d8.png"
+                },
+                "catIcon": {
+                    "picURL": "https://pdb-web-static.s3.us-east-2.amazonaws.com/category_icon/cat_15.png"
+                },
+                "subcategories": [
+                    {
+                        "id": "14677",
+                        "name": "Jeffree Star",
+                        "image": null,
+                        "catIcon": null
+                    }
+                ],
+                "personalities": [
+                    {
+                        "system": "Four Letter",
+                        "personality": "ESFP"
+                    },
+                    {
+                        "system": "Enneagram",
+                        "personality": "3w4"
+                    }
+                ],
+                "propertyID": "1",
+                "categoryID": "15",
+                "isMeme": false,
+                "isCharacter": false,
+                "isCelebrity": true
+            },
+            {
+                "subcatID": "20609",
+                "subcategory": "Kpop",
+                "id": "20609",
+                "name": "Nayeon (TWICE)",
+                "image": {
+                    "picURL": "https://static1.personality-database.com/profile_images/35b0b06c212f4c0d9711eb0c788763cb.png"
+                },
+                "catIcon": {
+                    "picURL": "https://pdb-web-static.s3.us-east-2.amazonaws.com/category_icon/cat_29.png"
+                },
+                "subcategories": [
+                    {
+                        "id": "20609",
+                        "name": "Nayeon (TWICE)",
+                        "image": null,
+                        "catIcon": null
+                    }
+                ],
+                "personalities": [
+                    {
+                        "system": "Four Letter",
+                        "personality": "ESFP"
+                    },
+                    {
+                        "system": "Enneagram",
+                        "personality": "3w2"
+                    }
+                ],
+                "propertyID": "1",
+                "categoryID": "29",
+                "isMeme": false,
+                "isCharacter": false,
+                "isCelebrity": true
+            },
+            {
+                "subcatID": "162398",
+                "subcategory": "Models",
+                "id": "162398",
+                "name": "Hoyeon",
+                "image": {
+                    "picURL": "https://static1.personality-database.com/profile_images/137fa8c4c1e84024a6a4863f66d47d0a.png"
+                },
+                "catIcon": {
+                    "picURL": "https://pdb-web-static.s3.us-east-2.amazonaws.com/category_icon/cat_1.png"
+                },
+                "subcategories": [
+                    {
+                        "id": "162398",
+                        "name": "Hoyeon",
+                        "image": null,
+                        "catIcon": null
+                    }
+                ],
+                "personalities": [
+                    {
+                        "system": "Four Letter",
+                        "personality": "ESFP"
+                    },
+                    {
+                        "system": "Enneagram",
+                        "personality": "9w1"
+                    }
+                ],
+                "propertyID": "1",
+                "categoryID": "1",
+                "isMeme": false,
+                "isCharacter": false,
+                "isCelebrity": true
+            }
+        ],
+        "type": "ESFP"
+    },
+    "error": {
+        "code": "S20000",
+        "message": "OK",
+        "details": {}
+    }
+}
