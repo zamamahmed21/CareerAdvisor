@@ -29,7 +29,16 @@ INNER JOIN temperament_type ON temperament_career.temperament_id_fk = temperamen
 INNER JOIN career ON temperament_career.career_id_fk = career.career_id)
 WHERE t_type like '%Choleric%';
 
-SELECT career_name FROM ((temperament_career
-INNER JOIN temperament_type ON temperament_career.temperament_id_fk = temperament_type.temperament_id)
-INNER JOIN career ON temperament_career.career_id_fk = career.career_id)
-WHERE t_type like '%Phlegmatic%'
+INSERT INTO mbti_career (career_id_fk, mbti_id_fk)
+SELECT career_id, mbti_id FROM career
+JOIN mbti_type 
+WHERE
+career.career_name IN ("Physician Assistant", "Pediatrician", "Advertising Sales Director", "Entrepreneur")
+AND
+mbti_type.personality_type = 'ESFP'
+
+SELECT career.career_name, career.low_avg_income, career.avg_income, career.max_avg_income, career.general_description
+FROM goal_career
+INNER JOIN career ON goal_career.career_career_id = career.career_id
+INNER JOIN goal ON goal_career.goal_goal_id = goal.goal_id
+WHERE lower(goal.title) = 'gaining knowledge and wisdom.'
