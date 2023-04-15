@@ -4,9 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../static/js/jquerygoal.js"></script>
     <title>Career Advisor</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+ 
+ 
   </head>
   <body>
 
@@ -45,16 +48,32 @@
     </div>
   </div>
  </nav>
- <select class="mt-100 bg-nav " aria-label="Default select example">
-    <option selected >Select Your Goal</option>
-    <option value="1">Scholar</option>
-    <option value="2">Teacher</option>
-    <option value="3">Programmer</option>
-  </select>
+ 
+ <h1>Select a Goal</h1>
+ 
+ <form method="POST" action="{{url_for('goal_return')}}">
+{% for goal, description in goals.items()%}
+<input type="radio" name="goal" id="goal" value="{{goal}}">
+<label ><b>{{goal}}</b></label><br>
+<label style="font-size: 14px;">{{description}}</label>
+<br>
+<br>
+{%endfor%}
+ 
+
+<div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
+  <button class="btn btn-primary border-success align-items-center btn-success bg-nav" type="button" id="next">Next<i class="fa fa-angle-right ml-2"></i></button></div>
+                </div>
+
+</form> 
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+
+
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   
     <div class="container mt-5">
         <div class="d-flex justify-content-center row">
@@ -62,24 +81,15 @@
                 <div class="border">
                     <div class="question bg-white p-3 border-bottom">
                         <div class="d-flex flex-row justify-content-between align-items-center mcq">
-                       
-                            <h4>Choose the answer that discribe you</h4></div>
-                    </div>
-                    <div class="question bg-white p-3 border-bottom">
-                        <div class="d-flex flex-row align-items-center question-title">
-                            <h3 class="text-danger">Q.</h3>
-                            <h5 class="mt-1 ml-2">At an event do you?</h5>
-                        </div><div class="ans ml-2">
-<label class="radio"> <input type="radio" name="A" value="A"> <span>Interect with many, including stranger</span>
-</label>    
-</div><div class="ans ml-2">
-<label class="radio"> <input type="radio" name="B" value="B"> <span>Interect with few,knowns to you</span>
-</label>    
-</div><div class="ans ml-2">
-    
-</div></div>
-                    <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white"><button class="btn btn-primary d-flex align-items-center btn-danger bg-nav" type="button"><i class="fa fa-angle-left mt-1 mr-1 "></i>&nbsp;previous</button><button class="btn btn-primary border-success align-items-center btn-success bg-nav" type="button">Next<i class="fa fa-angle-right ml-2"></i></button></div>
-                </div>
+                        -->
+                
+                
+                
+                
+                
+                
+                          
+                          
             </div>
         </div>
     </div>

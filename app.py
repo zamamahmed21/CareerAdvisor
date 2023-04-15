@@ -6,6 +6,8 @@ from recommendation import Career_Recommendation
 
 app = Flask (__name__,template_folder='template',static_folder='static')
 
+career_rec = Career_Recommendation()
+
 
 @app.route('/')
 def hello_world():
@@ -70,7 +72,7 @@ def calc_temperament_type_result():
         data = request.get_json()
         
         # assign scores to temperament letters
-        results = {'S':0,'M':0,'C':2,'P':0}
+        results = {'S':0,'M':0,'C':0,'P':0}
         for key,values in data.items():
             for letter in results:
                 for value in values:
@@ -127,16 +129,19 @@ def calc_career_recommendation():
     data = request.get_json()
     p_type = data['personality_type']
     t_type = data['temperament_type']
+    goal = data['goal']
 
-    career_rec = Career_Recommendation()
     print("Careers for Personality Type ",p_type)
     print(career_rec.careers_for_mbti(p_type))
     print("Careers for Temperament Type ",t_type)
     print(career_rec.careers_for_temperament(t_type))
     print(career_rec.recommend_careers_for_mbti_and_temperament())
+    print(goal)
+    print(career_rec.careers_for_goals(goal))
+    
 
     # return json containing career recommendations
-    return json.dumps({"data":career_rec.career_recommendations})
+    return json.dumps({"data":json.dumps(career_rec.career_recommendations_for_goals)})
 
 
 @app.route('/login')
@@ -148,9 +153,18 @@ def login():
 def register():
     return render_template('register.html')    
 
-@app.route('/goal')
+@app.route('/goal',methods=['GET','POST'])
 def goal():
-    return render_template('goal.html')  
+    goals = career_rec.get_goals()
+    
+    return render_template('goal.html',goals=goals) 
+ 
+@app.route('/goal_return',methods=['POST'])
+def goal_return():
+    goal = request.form['goal']
+    
+    return "" +goal
+
 
 @app.route('/about')
 def about():

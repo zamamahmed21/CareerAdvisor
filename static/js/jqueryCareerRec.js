@@ -6,11 +6,16 @@ $(document).ready(function(){
     // get temperament type variable from local storage
     let tKey = 'temperament_type';
     let tType = sessionStorage.getItem(tKey);
-    
+    //get goal variable from local storage
+    let gkey = 'goal';
+    let goal = sessionStorage.getItem(gkey);
+     
     // create JSON object & then create a string from it
     // Note that we have to use Computed Property Name for keys..
-    var testResults = {[pKey]:pType, [tKey]:tType};
+    var testResults = {[pKey]:pType, [tKey]:tType,[gkey]:goal};
     testResults = JSON.stringify(testResults);
+    
+
     
     // send POST request to the URL where calculations will be carried out
     $.ajax({ 
