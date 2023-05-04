@@ -28,12 +28,14 @@ $(document).ready(function(){
         success: function(response){ 
             console.log(response)
             let careers = JSON.parse(response);
+            careers = JSON.parse(careers["data"]);
             console.log(typeof careers);
             
             // display career recommendations
             
             $("#career_rec").append("<ul></ul>");
-            for (const [key, value] of Object.entries(careers["data"])) {
+            for (const [key,value] of Object.entries(careers)) {
+                // console.log(key,value)
               let career = `<li>${key}</li>`;
               career += `<p>${value[0]} ${value[1]} ${value[2]}</p>`;
               career += `<p>${value[3]}</p>`;
