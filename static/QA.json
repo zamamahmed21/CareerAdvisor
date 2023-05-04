@@ -5,9 +5,13 @@
         "In your social groups do you":["Keep abreast of other's happenings","Get behind on the news"],
         "In company do you:":["Initiate conversation","Wait to be approached"],
         "At parties do you:":["Stay late, with increasing energy","Leave early with decreased energy"],
-        "In phoning do you:":["Rarely question that it will all be said","Rehearse what you'll say"] 
-
-    },
+        "In phoning do you:":["Rarely question that it will all be said","Rehearse what you'll say"],
+        "When you meet someone new, do you:":["Feel energized and excited to engage with them","Feel a little nervous and prefer to observe before engaging"],
+        "Do you prefer to work in:":["A busy, collaborative environment with lots of people","A quiet, focused environment with few distractions"],
+        "Do you find that you prefer to spend your free time:":["Socializing and engaging with others","Engaging in solitary activities like reading or writing"],
+        "Do you tend to process information better when:":["Discussing it with others and bouncing ideas around","Reflecting on it quietly and thinking it through on your own"],
+        "Do you feel more comfortable in:":["Loud, bustling environments with lots of activity","Quiet, peaceful environments with little activity"]
+      },
 
     "SN":
     {
@@ -15,7 +19,13 @@
         "Are you more interested in:":["What is actual","What is possible"],
         "Are visionaries:":["Somewhat annoying","Rather fascinating"],
         "Are you more frequently:":["A practical sort of person","A fanciful sort of person"],
-        "Are you more into:":["Production and distribution","Design and research"]
+        "Are you more into:":["Production and distribution","Design and research"],
+        "When presented with a problem, I tend to focus on:":[" The facts and details","The big picture and possibilities"],
+        "I prefer to learn through:":["Hands-on experience","Reading and analyzing information"],
+        "I tend to rely on my:":["Five senses"," Imagination and intuition"],
+        "I prefer to spend my free time:":["Engaging in physical activities","Exploring new ideas and concepts"],
+        "When presented with a new idea or concept, I tend to:":[" Evaluate it based on its practical applications","Explore its potential and possibilities"]
+        
     },
 
     "FT":
@@ -24,7 +34,12 @@
         "Are you more:":["Gentle than firm","Firm than gentle"],
         "Which rule you:":["Your heart","Your head"],
         "Are you inclined more to be:":["Sympathetic","Fair-minded"],
-        "Do you see yourself as:":["Soft-hearted","Hard-hearted"]
+        "Do you see yourself as:":["Soft-hearted","Hard-hearted"],
+        "When making a decision, I tend to:":["Consider how it will impact other people","Rely on logic and reasoning"],
+        "I am more likely to:":["Trust my gut feelings","Analyze the situation and gather all the facts"],
+        "When giving feedback to others, I tend to:":[" Be sensitive to their feelings and emotions","Focus on the objective and give feedback based on the facts"],
+        "When dealing with a difficult situation, I tend to:":["Consider the emotional impact on others","Focus on finding a practical solution"],
+        "I am more comfortable with:":["Expressing my emotions and feelings openly","Keeping my emotions in check and staying rational"]
     },
 
     "PJ":
@@ -33,7 +48,12 @@
         "Should one usually let events occur:":["Randomly and by chance","By careful selection and choice"],
         "Would you say you are more:":["Easy-going","Serious and determined"],
         "Do you tend to look up for:":["Whatever turns up","The orderly"],
-        "Are you more comfortable:":["Before a decision","After a decision"]
+        "Are you more comfortable:":["Before a decision","After a decision"],
+        "I am more likely to:":["Wait and see how things turn out","Take charge and make things happen"],
+        "I prefer to complete my work:":["As soon as possible","Just before the deadline"],
+        "When making a decision, I tend to:":["Weigh all the options before deciding","Decide quickly based on my instincts"],
+        "I prefer to work in an environment that is:":["Free-flowing and flexible","Structured and organized"],
+        "I am more comfortable with:":["Taking risks and trying new things","Playing it safe and sticking to what I know"]
     }
 
 }

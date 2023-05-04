@@ -1,16 +1,17 @@
 $(document).ready(function(){
-
+  
     // get personality type variable from local storage
     let pKey = 'personality_type';
     let pType = sessionStorage.getItem(pKey); 
     // get temperament type variable from local storage
     let tKey = 'temperament_type';
     let tType = sessionStorage.getItem(tKey);
+    
     //get goal variable from local storage
     let gkey = 'goal';
     let goal = sessionStorage.getItem(gkey);
      
-    // create JSON object & then create a string from it
+    // created JSON object & then create a string from it
     // Note that we have to use Computed Property Name for keys..
     var testResults = {[pKey]:pType, [tKey]:tType,[gkey]:goal};
     testResults = JSON.stringify(testResults);
@@ -27,13 +28,22 @@ $(document).ready(function(){
         success: function(response){ 
             console.log(response)
             let careers = JSON.parse(response);
-
+            console.log(typeof careers);
+            
             // display career recommendations
+            
             $("#career_rec").append("<ul></ul>");
-            for (const career of careers["data"]){
-                $("#career_rec ul").append(`<li>${career}</li>`);
+            for (const [key, value] of Object.entries(careers["data"])) {
+              let career = `<li>${key}</li>`;
+              career += `<p>${value[0]} ${value[1]} ${value[2]}</p>`;
+              career += `<p>${value[3]}</p>`;
+              $("#career_rec ul").append(career);
             }
+           
         } 
     });
 
 });
+// print datatype of careers variable
+            // search how operations are performed on that datatype
+            // search for jquery methods to add html to a page

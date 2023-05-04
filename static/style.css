@@ -86,3 +86,6 @@ background: linear-gradient(to right, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, F
     background-color: #3e8e41;
   }
   
+  #career_rec ul {
+    list-style-type: disc;
+  }
