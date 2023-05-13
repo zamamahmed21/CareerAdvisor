@@ -46,6 +46,3 @@ $(document).ready(function(){
     });
 
 });
-// print datatype of careers variable
-            // search how operations are performed on that datatype
-            // search for jquery methods to add html to a page
