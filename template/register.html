@@ -1,3 +1,174 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Register</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../static/main.css" />
+		<link rel="stylesheet" href="./my.css">
+		<noscript><link rel="stylesheet" href="../static/noscript.css" /></noscript>
+		<script src="../static/js/jquery.min.js"></script>
+		<script src="../static/js/jquery.scrollex.min.js"></script>
+		<script src="../static/js/jquery.scrolly.min.js"></script>
+		<script src="../static/js/browser.min.js"></script>
+		<script src="../static/js/breakpoints.min.js"></script>
+		<script src="../static/js/util.js"></script>
+		<script src="../static/js/jquery.min.js"></script>
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h2></h2>
+						
+							
+					</header>
+					
+
+
+					<h1 style="font-family: 'Times New Roman', Times, serif; text-align: center;">Job Scout</h1>
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="/" class="active">Home</a></li>
+							<li><a href="#first">Career Match</a></li>
+							<li><a href="#second">GPT Career Match</a></li>
+							<!-- <li><a href="#cta">Job Scout</a></li> -->
+							<li><a href="/about">About us</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+            <section id="register" class="main">
+              <div >
+                <div class="content">
+                  <header class="major">
+                    <h2>Register yourself today and unlock a world of possibilities.</h2>
+                  </header>
+                  <p>Welcome to Job Scout - Your ultimate destination for discovering new career opportunities.</p>
+                  
+                  <ul class="actions">
+                  </ul>
+                  <form method="POST" action="{{ url_for('signup') }}">
+                    <label for="fullName">Full Name<span class="mandatory">*</span></label>
+                    <input type="text" name="fullName" class="form-control" required><br>
+                    <label for="email">Email<span class="mandatory">*</span></label>
+                    <input type="email" name="email" class="form-control" required><br>
+                    <label for="password">Password<span class="mandatory">*</span></label>
+                    <input type="password" name="password" class="form-control" required><br>
+                    <label for="dob">Date of Birth<span class="mandatory">*</span></label>
+                    <input type="date" name="dob" class="form-control" required><br>
+                    <br>
+                    <label for="userType">Select User Type<span class="mandatory">*</span></label>
+                    <input type="radio" id="recruiter" name="userType" value="recruiter" required>
+                    <label for="recruiter">Recruiter</label><br>
+                    <input type="radio" id="candidate" name="userType" value="candidate" required>
+                    <label for="candidate">Candidate</label><br>
+                    <br>
+                    <input type="submit" class="btn btn-primary btn-block btn-lg form-control" value="Register">
+                </form>
+				<p class="mt-2">Already a member? <a href="/login">Login</a></p>
+                <p><span class="mandatory">*</span> Indicates mandatory fields</p>
+                </div>
+                <span class="image"><img src="images/pic01.jpg" alt="" /></span>
+              </div>
+            </section>
+
+						
+
+						<!-- First Section -->
+							<section id="first" class="main special">
+								<header class="major">
+									<h2>Career Match</h2>
+								</header>
+								<ul class="features">
+									<li>
+										<span class="icon solid major style1 fa-code"></span>
+										<h3>Personality Test</h3>
+										<p>A personality test is a tool that assesses an individual's traits, behaviors, and characteristics to gain insight into their unique personality profile, helping them understand their strengths, preferences, and areas for growth.</p>
+									</li>
+									<li>
+										<span class="icon major style3 fa-copy"></span>
+										<h3>Temperament Test</h3>
+										<p>A temperament test evaluates an individual's natural disposition, emotional tendencies, and preferred ways of interacting with the world, aiding in understanding how they react to situations, make decisions, and interact with others.</p>
+									</li>
+									
+								</ul>
+                
+								<footer class="major">
+									<ul class="actions special">
+										<li><a href="/PersonalityTest" class="button">Take Test</a></li>
+									</ul>
+								</footer>
+							</section>
+
+						<!-- Second Section -->
+							<section id="second" class="main special">
+								<header class="major">
+									<h2>GPT Career Match</h2>
+								</header>
+								<ul class="features">
+									<li>
+										<span class="icon solid major style1 fa-code"></span>
+										<h3>Goal</h3>
+										<p>you have to select one goal from the given goals.</p>
+									</li>
+									<li>
+										<span class="icon major style3 fa-copy"></span>
+										<h3>Personality Test</h3>
+										<p>A personality test is a tool that assesses an individual's traits, behaviors, and characteristics to gain insight into their unique personality profile, helping them understand their strengths, preferences, and areas for growth..</p>
+									</li>
+									<li>
+										<span class="icon major style5 fa-gem"></span>
+										<h3>Temperament Test</h3>
+										<p>A temperament test evaluates an individual's natural disposition, emotional tendencies, and preferred ways of interacting with the world, aiding in understanding how they react to situations, make decisions, and interact with others.</p>
+									</li>
+									
+								</ul>
+								<footer class="major">
+									<ul class="actions special">
+										<li><a href="/goal" class="button">Take Test</a></li>
+									</ul>
+								</footer>
+							</section>
+
+						<!-- Get Started -->
+							
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h2>Learn More About us</h2>
+							<ul class="actions">
+								<li><a href="generic.html" class="button">Find More</a></li>
+							</ul>
+						</section>
+						<section>
+							
+							
+						</section>
+						<p class="copyright">&copy;  <a href="/">Career Advisor</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+		
+	</body>
+</html>
+
+
+
+
+
 <!-- <!doctype html>
 <html lang="en">
   <head>

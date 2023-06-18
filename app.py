@@ -1,12 +1,18 @@
 import json
 from flask import Flask , render_template, redirect, url_for, session
 from flask import request, send_from_directory
+import sqlite3
+import subprocess
 
+from resumematch import extract_skills
 from recommendation import Career_Recommendation
 
 app = Flask (__name__,template_folder='template',static_folder='static')
 
+app.secret_key = 'CA'
 career_rec = Career_Recommendation()
+
+# resume_matcher=ResumeMatcher()
 
 
 @app.route('/')
@@ -151,7 +157,47 @@ def login():
 
 @app.route('/register')
 def register():
-    return render_template('register.html')    
+    
+     return render_template('register.html')    
+
+
+
+@app.route('/', methods=['GET', 'POST'])
+def signup():
+    if request.method == 'POST':
+        full_name = request.form['fullName']
+        email = request.form['email']
+        password = request.form['password']
+        dob = request.form['dob']
+        user_type = request.form['userType']
+
+        career_rec.register(full_name,email,password,dob,user_type)
+
+        return render_template('login.html')
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def log():
+    error_message = None
+
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+
+        user = career_rec.verify_login(email, password)
+        if user:
+            session['user'] = user
+            return redirect('/dashboard')
+        else:
+            error_message = 'Invalid email or password'
+
+    return render_template('login.html', error=error_message)
+
+
+
+
+
+
 
 @app.route('/goal',methods=['GET','POST'])
 def goal():
@@ -169,7 +215,80 @@ def goal_return():
 @app.route('/about')
 def about():
     return render_template('about.html')  
-     
+
+
+@app.route('/dashboard')
+def dashboard():
+    if 'user' in session:
+        user = session['user']
+        full_name = user['full_name']
+        if user['user_type']=='candidate':
+            return render_template('job_dashboard.html', full_name=full_name)
+        elif user['user_type']=='recruiter':
+            return render_template('recruiter_dashboard.html',full_name=full_name)
+    else:
+        return redirect(url_for('log'))
+
+    
+
+@app.route('/logout')
+def logout():
+    session.pop('user', None)
+    return redirect(url_for('log'))
+
+
+@app.route('/upload_resume', methods=['POST'])
+def upload_resume():
+  
+
+    if 'resume' not in request.files:
+        return "No resume file found"
+
+    resume_file = request.files['resume']
+
+    if resume_file.filename == '':
+        return "No selected resume file"
+
+    resume_data = resume_file.read()
+    career_rec.insert_resume(resume_data)
+
+    subprocess.run(['python', 'resume_match.py'])
+    
+    resume_data=career_rec.fetch_user_resume_data(session.get('email'))
+    
+    
+    skills = extract_skills(resume_data)
+    
+    email = session.get('email') 
+    print(email)
+    print(skills)
+    career_rec.update_user_resume_data(skills, email)
+    
+    
+    return render_template('job_dashboard.html', resume_saved=True, full_name=session['user']['full_name'])
+
+# @app.route('/upload_resume', methods=['POST'])
+# def upload_resume():
+#     if 'resume' not in request.files:
+#         return "No resume file found"
+
+#     resume_file = request.files['resume']
+
+#     if resume_file.filename == '':
+#         return "No selected resume file"
+
+#     resume_data = resume_file.read()
+#     career_rec.insert_resume(resume_data)
+
+#     return render_template('job_dashboard.html', resume_saved=True, full_name=session['user']['full_name'])
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 @app.route('/json/<path>')
 def send_report(path):
     return send_from_directory('static', path)

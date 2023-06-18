@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Career Advisor</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../static/main.css" />
+		<link rel="stylesheet" href="./my.css">
+		<noscript><link rel="stylesheet" href="../static/noscript.css" /></noscript>
+		<script src="../static/js/jquery.min.js"></script>
+		<script src="../static/js/jquery.scrollex.min.js"></script>
+		<script src="../static/js/jquery.scrolly.min.js"></script>
+		<script src="../static/js/browser.min.js"></script>
+		<script src="../static/js/breakpoints.min.js"></script>
+		<script src="../static/js/util.js"></script>
+		<script src="../static/js/jquery.min.js"></script>
+		<script>
+			function suggestKeywords() {
+				// Get user input from the text box
+				var userInput = document.getElementById("keywordInput").value;
+				
+				// Perform an asynchronous request to your backend API to get keyword suggestions
+				// You may need to adapt this code to connect to your specific backend implementation
+				// Here, we assume the API endpoint is '/suggest_keywords'
+				fetch('/suggest_keywords', {
+					method: 'POST',
+					body: JSON.stringify({ userInput: userInput }),
+					headers: {
+						'Content-Type': 'application/json'
+					}
+				})
+				.then(response => response.json())
+				.then(data => {
+					// Display the suggested keywords in a dropdown or list
+					var suggestionsList = document.getElementById("suggestionsList");
+					suggestionsList.innerHTML = "";
+					data.suggestions.forEach(suggestion => {
+						var option = document.createElement("option");
+						option.value = suggestion;
+						suggestionsList.appendChild(option);
+					});
+				})
+				.catch(error => {
+					console.error('Error:', error);
+				});
+			}
+		</script>
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				
+					
+
+
+					<h1 style="font-family: 'Times New Roman', Times, serif; text-align: center;">Welcome Recruiter</h1>
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="#intro" class="active">Intro</a></li>
+							<li><a href="#first">Career Match</a></li>
+							<li><a href="#second">GPT Career Match</a></li>
+							<li><a href="/about">About us</a></li>
+							<li><a href="/logout">Logout</a></li>
+
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Introduction -->
+						<section id="intro" class="main">
+							<div>
+								<div class="content">
+									<header class="major">
+										<h2>Welcome, {{full_name}}</h2>
+									</header>
+									<p>Discover your perfect candidate today! Post your job and get ready to be amazed by the exceptional talent that will come knocking at your door. Your inbox is about to become a treasure trove of impressive resumes and cover letters. Don't wait any longer, take the first step towards finding your ideal match. Post your job now!</p>
+									<form action="{{ url_for('upload_resume') }}" method="POST" enctype="multipart/form-data">
+										
+										<label for="job">Enter Job Description</label><br>
+										<span id="additionalInfo" style="font-size: 20px;">(e.g. Skills, Experience, Position)</span>
+										<textarea id="job" rows="4" cols="50" oninput="updateWordCount()" maxlength="1000" style="font-size: 20px;"></textarea>
+    <div id="wordCount">Word Count: 0/1000</div>
+
+    <script>
+        function updateWordCount() {
+            var textarea = document.getElementById("job");
+            var wordCount = document.getElementById("wordCount");
+
+            var text = textarea.value.trim();
+            var words = text.split(/\s+/);
+            var count = words.length;
+
+            wordCount.textContent = "Word Count: " + count + "/1000";
+
+            if (count > 1000) {
+                textarea.value = words.slice(0, 1000).join(" ");
+                wordCount.style.color = "red";
+            } else {
+                wordCount.style.color = "black";
+            }
+        }
+    </script>
+									
+										<br><br>
+										<input type="submit" value="Submit">
+										<br><br>
+									</form>
+									{% if resume_saved %}
+								<p>Job Posted Successfully!</p>
+							{% endif %}
+									<hr>
+									
+						</section>
+						
+						  
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+
+						<!-- First Section -->
+							<section id="first" class="main special">
+								<header class="major">
+									<h2>Assessment</h2>
+								</header>
+								<ul class="features">
+									<li>
+										<span class="icon solid major style1 fa-code"></span>
+										<h3>Personality Test</h3>
+										<p>A personality test is a tool that assesses an individual's traits, behaviors, and characteristics to gain insight into their unique personality profile, helping them understand their strengths, preferences, and areas for growth.</p>
+									</li>
+									<li>
+										<span class="icon major style3 fa-copy"></span>
+										<h3>Temperament Test</h3>
+										<p>A temperament test evaluates an individual's natural disposition, emotional tendencies, and preferred ways of interacting with the world, aiding in understanding how they react to situations, make decisions, and interact with others.</p>
+									</li>
+									
+								</ul>
+								<footer class="major">
+									<ul class="actions special">
+										<li><a href="/PersonalityTest" class="button">Take Test</a></li>
+										<li style='margin-left: 150px'><a href="/TemperamentTest" class="button">Take Test</a></li>
+									</ul>
+								</footer>
+							</section>
+
+						<!-- Second Section -->
+							<section id="second" class="main special">
+								<header class="major">
+									<h2>GPT Career Match</h2>
+								</header>
+								<ul class="features">
+									<li>
+										<span class="icon solid major style1 fa-code"></span>
+										<h3>Goal</h3>
+										<p>you have to select one goal from the given goals.</p>
+									</li>
+									<li>
+										<span class="icon major style3 fa-copy"></span>
+										<h3>Personality Test</h3>
+										<p>A personality test is a tool that assesses an individual's traits, behaviors, and characteristics to gain insight into their unique personality profile, helping them understand their strengths, preferences, and areas for growth..</p>
+									</li>
+									<li>
+										<span class="icon major style5 fa-gem"></span>
+										<h3>Temperament Test</h3>
+										<p>A temperament test evaluates an individual's natural disposition, emotional tendencies, and preferred ways of interacting with the world, aiding in understanding how they react to situations, make decisions, and interact with others.</p>
+									</li>
+									
+								</ul>
+								<footer class="major">
+									<ul class="actions special">
+										<li><a href="/goal" class="button">Take Test</a></li>
+									</ul>
+								</footer>
+							</section>
+
+						<!-- Get Started -->
+							<section id="cta" class="main special">
+								<header class="major">
+									<h2>Job Scout</h2>
+									<p>Job seekers can upload their resumes while recruiters post job listings, and an advanced matching system recommends the most suitable candidates for each job to the recruiters.</p>
+								</header>
+								<footer class="major">
+									<ul class="actions special">
+										<li><a href="/register" class="button primary">Register</a></li>
+										<li><a href="/login" class="button">Login</a></li>
+									</ul>
+								</footer>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h2>Learn More About us</h2>
+							<ul class="actions">
+								<li><a href="generic.html" class="button">Find More</a></li>
+							</ul>
+						</section>
+						<section>
+							
+							
+						</section>
+						<p class="copyright">&copy;  <a href="/">Career Advisor</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+		
+	</body>
+</html>

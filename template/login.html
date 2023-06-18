@@ -1,82 +1,162 @@
-<!-- <!doctype html>
-<html lang="en">
-  <head>
-    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  </head>
-  <body class="bg-nav">
-</nav>
-<nav class="navbar navbar-expand-lg bg-nav">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/" style="color:white">CAREER ADVISOR</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div background-color="" class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/PersonalityTest" style="color: rgb(242, 248, 242)" >Personality Test</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(242, 248, 242)">
-            Information
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#" style="color: rgb(10, 10, 10)">Personality Types</a></li>
-            <li><a class="dropdown-item" href="#" style="color: rgb(13, 14, 13)">Temperament Types</a></li>
-            <li><hr class="dropdown-divider"></li>
-            
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" style="color: rgb(242, 248, 242)">About Us</a>
-        </li>
-        
-        
-      </ul>
-      
-    </div>
-  </div>
- </nav>
+
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Register</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../static/main.css" />
+		<link rel="stylesheet" href="./my.css">
+		<noscript><link rel="stylesheet" href="../static/noscript.css" /></noscript>
+		<script src="../static/js/jquery.min.js"></script>
+		<script src="../static/js/jquery.scrollex.min.js"></script>
+		<script src="../static/js/jquery.scrolly.min.js"></script>
+		<script src="../static/js/browser.min.js"></script>
+		<script src="../static/js/breakpoints.min.js"></script>
+		<script src="../static/js/util.js"></script>
+		<script src="../static/js/jquery.min.js"></script>
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h2></h2>
+						
+							
+					</header>
+					
 
 
+					<h1 style="font-family: 'Times New Roman', Times, serif; text-align: center;">Job Scout</h1>
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="/" class="active">Home</a></li>
+							<li><a href="#first">Career Match</a></li>
+							<li><a href="#second">GPT Career Match</a></li>
+							<!-- <li><a href="#cta">Job Scout</a></li> -->
+							<li><a href="/about">About us</a></li>
+						</ul>
+					</nav>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                
-                <h1 class="text-light display-4 mt-100"style= >LOOKING FOR JOB ?</h1>
-                <h1 class="text-light display-4">LOGIN NOW</h1>
-                
-            </div>
-                <div class="col-md-4">
-                    <div class="card mt-100">
-                        <div class="card-body">
-                            <form>
-                                <label>Email</label><br><br>
-                                <input type="email" class="form-control"><br>
-                                <label>Password</label><br><br>
-                                <input type="password" class="form-control"><br>
-                                <input type="submit" class="btn btn-primary btn-block btn-lg " value="Login">
-                            </form>
-                            <p class="mt-2">Not a member?<a href="/register">Create Account</a></p>
-                        </div>
-                    </div>
+				<!-- Main -->
+					<div id="main">
+
+            <section id="register" class="main">
+              <div >
+                <div class="content">
+                  <header class="major">
+                    <h2>Login</h2>
+                  </header>
+                  <p>Welcome to Job Scout - Your ultimate destination for discovering new career opportunities.</p>
+                  
+                  <ul class="actions">
+                  </ul>
+                  <form method="POST" action="{{ url_for('login') }}">
+					<label for="email">Email<span class="mandatory">*</span></label>
+					<input type="email" name="email" class="form-control" required><br>
+					<label for="password">Password<span class="mandatory">*</span></label>
+					<input type="password" name="password" class="form-control" required><br>
+					<input type="submit" class="btn btn-primary btn-block btn-lg" value="Login"><br>
+					
+					{% if error %}
+					<p style="color: red; font-weight: bold; font-size: 1.2em;" class="error-message">{{ error }}</p>
+				{% endif %}
+				</form>
+				
+                <p class="mt-2">Not a member? <a href="/register">Create Account</a></p>
+                <p><span class="mandatory">*</span> Indicates mandatory fields</p>
+                  
                 </div>
+                <span class="image"><img src="images/pic01.jpg" alt="" /></span>
+              </div>
+            </section>
 
-            </div>
+						
 
-        </div>
+						<!-- First Section -->
+							<section id="first" class="main special">
+								<header class="major">
+									<h2>Career Match</h2>
+								</header>
+								<ul class="features">
+									<li>
+										<span class="icon solid major style1 fa-code"></span>
+										<h3>Personality Test</h3>
+										<p>A personality test is a tool that assesses an individual's traits, behaviors, and characteristics to gain insight into their unique personality profile, helping them understand their strengths, preferences, and areas for growth.</p>
+									</li>
+									<li>
+										<span class="icon major style3 fa-copy"></span>
+										<h3>Temperament Test</h3>
+										<p>A temperament test evaluates an individual's natural disposition, emotional tendencies, and preferred ways of interacting with the world, aiding in understanding how they react to situations, make decisions, and interact with others.</p>
+									</li>
+									
+								</ul>
+                
+								<footer class="major">
+									<ul class="actions special">
+										<li><a href="/PersonalityTest" class="button">Take Test</a></li>
+									</ul>
+								</footer>
+							</section>
 
+						<!-- Second Section -->
+							<section id="second" class="main special">
+								<header class="major">
+									<h2>GPT Career Match</h2>
+								</header>
+								<ul class="features">
+									<li>
+										<span class="icon solid major style1 fa-code"></span>
+										<h3>Goal</h3>
+										<p>you have to select one goal from the given goals.</p>
+									</li>
+									<li>
+										<span class="icon major style3 fa-copy"></span>
+										<h3>Personality Test</h3>
+										<p>A personality test is a tool that assesses an individual's traits, behaviors, and characteristics to gain insight into their unique personality profile, helping them understand their strengths, preferences, and areas for growth..</p>
+									</li>
+									<li>
+										<span class="icon major style5 fa-gem"></span>
+										<h3>Temperament Test</h3>
+										<p>A temperament test evaluates an individual's natural disposition, emotional tendencies, and preferred ways of interacting with the world, aiding in understanding how they react to situations, make decisions, and interact with others.</p>
+									</li>
+									
+								</ul>
+								<footer class="major">
+									<ul class="actions special">
+										<li><a href="/goal" class="button">Take Test</a></li>
+									</ul>
+								</footer>
+							</section>
 
+						<!-- Get Started -->
+							
+					</div>
 
-    </div>
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h2>Learn More About us</h2>
+							<ul class="actions">
+								<li><a href="generic.html" class="button">Find More</a></li>
+							</ul>
+						</section>
+						<section>
+							
+							
+						</section>
+						<p class="copyright">&copy;  <a href="/">Career Advisor</a>.</p>
+					</footer>
 
+			</div>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-  </body>
-</html> -->
+		<!-- Scripts -->
+		
+	</body>
+</html>

@@ -11,3 +11,28 @@
 .h-500{
   height: 500;
 }
+
+
+
+*{
+  padding: 0;
+  margin:0;
+  font-family: 'Josefin Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+.hero{
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background: #654ea3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom,#654ea3 , #eaafc8);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom,#654ea3 ,#eaafc8 ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
+.logo {
+  color: #eaafc8;
+  text-align: center;
+}
+

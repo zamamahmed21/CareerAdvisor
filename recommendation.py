@@ -1,5 +1,9 @@
 import sqlite3
 from time import sleep
+from flask import Flask, session
+
+app = Flask(__name__)
+app.secret_key = 'AC'
 
 
 class Career_Recommendation():
@@ -121,8 +125,81 @@ class Career_Recommendation():
         
         return self.career_recommendations_for_goals
 
+    def register(self,full_name,email,password,dob,user_type):
+    
+        self.conn = sqlite3.connect(self.db_name)
+        cursor = self.conn.cursor()
+        cursor.execute("INSERT INTO users (full_name, email, password, dob, user_type) VALUES (?, ?, ?, ?, ?)",
+                    (full_name, email, password, dob, user_type))
+        self.conn.commit()
+        self.conn.close()
+        
+    def verify_login(self, email, password):
+        self.conn = sqlite3.connect(self.db_name)
+        cursor = self.conn.cursor()
+        cursor.execute("SELECT * FROM users WHERE email = ? AND password = ?", (email, password))
+        user = cursor.fetchone()
+        self.conn.close()
+
+        if user:
+            session['email'] = email
+            user_dict={
+            'id':user[0],
+            
+            'full_name': user[1].capitalize(),
+            'email': user[2],
+            'password': user[3],
+            'dob': user[4],
+            'user_type': user[5]
+            }
+            return user_dict
+        else:
+            return None
+   
+    def insert_resume(self, resume_data):
+        self.conn = sqlite3.connect(self.db_name)
+        cursor = self.conn.cursor()
+        email = session.get('email')
+        
+        if email:
+            cursor.execute("UPDATE users SET resume_data = ? WHERE email=?", (resume_data, email,))
+        
+            self.conn.commit()
+            self.conn.close()
+            
+    def fetch_user_resume_data(self,email):
+        self.conn = sqlite3.connect(self.db_name)
+        cursor = self.conn.cursor()
+        
+        # Retrieve records based on email
+        cursor.execute("SELECT resume_data FROM users WHERE email=?", (email,))
+        row = cursor.fetchone()
+
+        self.conn.close()
+                
+        return row[0]
+    
+    def update_user_resume_data(self,skills,email):
+        self.conn = sqlite3.connect(self.db_name)
+        cursor = self.conn.cursor()
+        cursor.execute("UPDATE users SET skills = ? WHERE email = ?;", (', '.join(skills), email))
+        self.conn.commit()
+        self.conn.close()
+        
+        return
+    
+            
+    
+    
+    
+
+        
 
 
+                
+                
+                
+                
 if __name__ == '__main__':
 
     career_rec = Career_Recommendation()
@@ -132,3 +209,4 @@ if __name__ == '__main__':
     print(career_rec.recommend_careers_for_mbti_and_temperament())
     # print(career_rec.get_goals())
     print(career_rec.careers_for_goals('Accumulate wealth.'))
+    

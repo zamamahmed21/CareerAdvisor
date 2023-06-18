@@ -1,0 +1,9 @@
+img{
+    background-image: url("/images/pic01.jpg");
+    max-width: 100%;
+    height: auto;
+}
+
+.a{
+    color: black;
+}
