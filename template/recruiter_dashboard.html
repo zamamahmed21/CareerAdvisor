@@ -81,38 +81,38 @@
 										<h2>Welcome, {{full_name}}</h2>
 									</header>
 									<p>Discover your perfect candidate today! Post your job and get ready to be amazed by the exceptional talent that will come knocking at your door. Your inbox is about to become a treasure trove of impressive resumes and cover letters. Don't wait any longer, take the first step towards finding your ideal match. Post your job now!</p>
-									<form action="{{ url_for('upload_resume') }}" method="POST" enctype="multipart/form-data">
+									<form action="{{ url_for('save_job_description') }}" method="POST" enctype="multipart/form-data">
 										
 										<label for="job">Enter Job Description</label><br>
 										<span id="additionalInfo" style="font-size: 20px;">(e.g. Skills, Experience, Position)</span>
-										<textarea id="job" rows="4" cols="50" oninput="updateWordCount()" maxlength="1000" style="font-size: 20px;"></textarea>
-    <div id="wordCount">Word Count: 0/1000</div>
+										<textarea name="job_description" rows="4" cols="50" oninput="updateWordCount()" maxlength="1000" style="font-size: 20px;"></textarea>
+										<div id="wordCount">Word Count: 0/1000</div>
 
-    <script>
-        function updateWordCount() {
-            var textarea = document.getElementById("job");
-            var wordCount = document.getElementById("wordCount");
+										<script>
+											function updateWordCount() {
+												var textarea = document.getElementById("job");
+												var wordCount = document.getElementById("wordCount");
 
-            var text = textarea.value.trim();
-            var words = text.split(/\s+/);
-            var count = words.length;
+												var text = textarea.value.trim();
+												var words = text.split(/\s+/);
+												var count = words.length;
 
-            wordCount.textContent = "Word Count: " + count + "/1000";
+												wordCount.textContent = "Word Count: " + count + "/1000";
 
-            if (count > 1000) {
-                textarea.value = words.slice(0, 1000).join(" ");
-                wordCount.style.color = "red";
-            } else {
-                wordCount.style.color = "black";
-            }
-        }
-    </script>
+												if (count > 1000) {
+													textarea.value = words.slice(0, 1000).join(" ");
+													wordCount.style.color = "red";
+												} else {
+													wordCount.style.color = "black";
+												}
+											}
+										</script>
 									
 										<br><br>
 										<input type="submit" value="Submit">
 										<br><br>
 									</form>
-									{% if resume_saved %}
+									{% if job_savaed %}
 								<p>Job Posted Successfully!</p>
 							{% endif %}
 									<hr>

@@ -1,6 +1,8 @@
 import sqlite3
 from time import sleep
 from flask import Flask, session
+import os
+import PyPDF2
 
 app = Flask(__name__)
 app.secret_key = 'AC'
@@ -155,17 +157,57 @@ class Career_Recommendation():
             return user_dict
         else:
             return None
+        
    
-    def insert_resume(self, resume_data):
+    def save_resume(self, resume_file):
+        if resume_file.filename == '':
+            return "No selected resume file"
+        
+        if not os.path.exists('resume'):
+            os.makedirs('resume')
+        
+        filename = resume_file.filename
+        file_ext = os.path.splitext(filename)[1]
+        
+        user_email = session.get('email')  
+
+        if user_email:
+            save_filename = user_email + file_ext
+        else:
+            save_filename = "unknown_user" + file_ext
+            
+        save_path = os.path.join('resume', save_filename)
+        
+        resume_file.save(save_path)
+        resume_data = career_rec.get_resume_pdf(save_path)
+
+        print(save_path)
+        return save_path
+        
+    
+    def insert_resume_path(self,resume_path):
         self.conn = sqlite3.connect(self.db_name)
         cursor = self.conn.cursor()
         email = session.get('email')
         
         if email:
-            cursor.execute("UPDATE users SET resume_data = ? WHERE email=?", (resume_data, email,))
+            cursor.execute("UPDATE users SET resume_data = ? WHERE email=?", (resume_path, email,))
         
             self.conn.commit()
             self.conn.close()
+            
+            
+            
+    def read_resume_text(self, resume_path):
+        with open(resume_path, 'rb') as file:
+            reader = PyPDF2.PdfReader(file)
+            num_pages = len(reader.pages)
+            resume_text = ""
+            for page in reader.pages:
+                resume_text += page.extract_text()
+
+        return resume_text
+        
             
     def fetch_user_resume_data(self,email):
         self.conn = sqlite3.connect(self.db_name)
@@ -186,9 +228,69 @@ class Career_Recommendation():
         self.conn.commit()
         self.conn.close()
         
-        return
+    def update_user_job_data(self,job_description_skills,email):
+        self.conn = sqlite3.connect(self.db_name)
+        print(job_description_skills)  # Add this line to check the value
+
+        cursor = self.conn.cursor()
+        cursor.execute("UPDATE users SET job_description_skills = ? WHERE email = ?;", (', '.join(job_description_skills), email))
+        
+
+       
+        self.conn.commit()
+        self.conn.close()    
+        # print(f'UPDATE users SET job_description_skills = {job_description_skills} WHERE email={email};')
+        
+        
+        
+        
+    def get_all_job_description_skills(self):
+        self.conn = sqlite3.connect(self.db_name)
+        self.conn.row_factory = lambda cursor, row: list(row)
+        cursor = self.conn.cursor()
+        
+        cursor.execute("SELECT job_description_skills FROM users WHERE user_type='recruiter'and job_description_skills is Not NUll")
+        job_description_skills=cursor.fetchall()
+        
+        self.conn.close()
+        return job_description_skills
     
-            
+    def get_all_candidate_skills(self):
+        self.conn = sqlite3.connect(self.db_name)
+        self.conn.row_factory = lambda cursor, row: list(row)
+        cursor = self.conn.cursor()
+        
+        cursor.execute("SELECT skills FROM users WHERE user_type='candidate' and skills is Not Null")
+        candidate_skills = cursor.fetchall()
+        
+        self.conn.close()
+        return candidate_skills
+
+        
+    
+    def fetch_user_job_data(self,email):
+        self.conn = sqlite3.connect(self.db_name)
+        cursor = self.conn.cursor()
+        
+        # Retrieve records based on email
+        cursor.execute("SELECT job_description FROM users WHERE email=?", (email,))
+        row = cursor.fetchone()
+
+        self.conn.close()
+                
+        return row[0]
+       
+    
+    def save_job_description(self,job_description,email):
+        self.conn = sqlite3.connect(self.db_name)
+        cursor = self.conn.cursor()
+        cursor.execute("UPDATE users SET job_description = ? WHERE email=?;", (job_description,email))
+
+        self.conn.commit()
+        self.conn.close()
+    
+        # print(f'UPDATE users SET job_description = {job_description} WHERE email={email};')
+    
     
     
     
@@ -203,10 +305,12 @@ class Career_Recommendation():
 if __name__ == '__main__':
 
     career_rec = Career_Recommendation()
-
-    print(career_rec.careers_for_mbti('ESFP'))
-    print(career_rec.careers_for_temperament('Sanguine'))
-    print(career_rec.recommend_careers_for_mbti_and_temperament())
-    # print(career_rec.get_goals())
-    print(career_rec.careers_for_goals('Accumulate wealth.'))
+    # career_rec.update_user_job_data('job_description_skills','esaanjum@gmail.com')
+    print(career_rec.get_all_job_description_skills())
+    print(career_rec.get_all_candidate_skills())
+    # print(career_rec.careers_for_mbti('ESFP'))
+    # print(career_rec.careers_for_temperament('Sanguine'))
+    # print(career_rec.recommend_careers_for_mbti_and_temperament())
+    # # print(career_rec.get_goals())
+    # print(career_rec.careers_for_goals('Accumulate wealth.'))
     

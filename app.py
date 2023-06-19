@@ -5,6 +5,7 @@ import sqlite3
 import subprocess
 
 from resumematch import extract_skills
+from resumematch import extract_job_skills
 from recommendation import Career_Recommendation
 
 app = Flask (__name__,template_folder='template',static_folder='static')
@@ -12,7 +13,7 @@ app = Flask (__name__,template_folder='template',static_folder='static')
 app.secret_key = 'CA'
 career_rec = Career_Recommendation()
 
-# resume_matcher=ResumeMatcher()
+
 
 
 @app.route('/')
@@ -239,52 +240,64 @@ def logout():
 
 @app.route('/upload_resume', methods=['POST'])
 def upload_resume():
-  
-
+    
     if 'resume' not in request.files:
         return "No resume file found"
 
     resume_file = request.files['resume']
+    email=session.get('email')
+    full_name=session.get('full_name')
+    saved_file_path = career_rec.save_resume(resume_file, email, full_name)
 
-    if resume_file.filename == '':
-        return "No selected resume file"
+    if saved_file_path.startswith("No selected resume file"):
+        return saved_file_path
+    career_rec.insert_resume_path(saved_file_path)
 
-    resume_data = resume_file.read()
-    career_rec.insert_resume(resume_data)
+    # if 'resume' not in request.files:
+    #     return "No resume file found"
 
-    subprocess.run(['python', 'resume_match.py'])
+    # resume_file = request.files['resume']
+
+    # if resume_file.filename == '':
+    #     return "No selected resume file"
+
+    # resume_data = resume_file.read()
+    # career_rec.insert_resume(resume_data)
+
+    # subprocess.run(['python', 'resume_match.py'])
     
-    resume_data=career_rec.fetch_user_resume_data(session.get('email'))
+    resume_data=career_rec.read_resume_text(saved_file_path)
     
     
     skills = extract_skills(resume_data)
-    
     email = session.get('email') 
-    print(email)
-    print(skills)
+    # print(email)
+    # print(skills)
     career_rec.update_user_resume_data(skills, email)
     
     
     return render_template('job_dashboard.html', resume_saved=True, full_name=session['user']['full_name'])
 
-# @app.route('/upload_resume', methods=['POST'])
-# def upload_resume():
-#     if 'resume' not in request.files:
-#         return "No resume file found"
 
-#     resume_file = request.files['resume']
-
-#     if resume_file.filename == '':
-#         return "No selected resume file"
-
-#     resume_data = resume_file.read()
-#     career_rec.insert_resume(resume_data)
-
-#     return render_template('job_dashboard.html', resume_saved=True, full_name=session['user']['full_name'])
-
+@app.route('/Upload_job',methods=['POST'])
+def save_job_description():
+    job_description=request.form.get('job_description')
+    email=session.get('email')
+    # print("Submitted job description:", job_description)
+    # print("Submitted email:", email)
+    career_rec.save_job_description(job_description,email)
+    
+    
+    job_description=career_rec.fetch_user_job_data(session.get('email'))
+    
+    job_description_skills =extract_job_skills(job_description)
+    print(email)
+    print(job_description_skills)
+    career_rec.update_user_job_data(job_description_skills,email)
+    
+    return render_template('recruiter_dashboard.html',job_saved=True,full_name=session['user']['full_name'])
  
- 
- 
+    
  
  
  
@@ -295,3 +308,5 @@ def send_report(path):
 
 if __name__=="__main__":
     app.run(host="0.0.0.0",debug=True) 
+    
+    

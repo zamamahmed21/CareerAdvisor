@@ -1,0 +1,337 @@
+{
+    "results": {
+        "full_matches": [
+            {
+                "doc_node_id": [
+                    22,
+                    23
+                ],
+                "doc_node_value": "software development",
+                "score": 1,
+                "skill_id": "KS120L96KMYTDJ48NRSH"
+            },
+            {
+                "doc_node_id": [
+                    25,
+                    26
+                ],
+                "doc_node_value": "data analysis",
+                "score": 1,
+                "skill_id": "KS120GV6C72JMSZKMTD7"
+            },
+            {
+                "doc_node_id": [
+                    100,
+                    101
+                ],
+                "doc_node_value": "computer science",
+                "score": 1,
+                "skill_id": "KS1226Y6DNDT05G7FJ4J"
+            },
+            {
+                "doc_node_id": [
+                    106,
+                    107
+                ],
+                "doc_node_value": "management system",
+                "score": 1,
+                "skill_id": "KS1264669X43NJFLT6SN"
+            },
+            {
+                "doc_node_id": [
+                    121,
+                    122,
+                    123
+                ],
+                "doc_node_value": "java database connectivity",
+                "score": 1,
+                "skill_id": "KS125H15XT422MLFC4WH"
+            },
+            {
+                "doc_node_id": [
+                    129,
+                    130
+                ],
+                "doc_node_value": "oracle database",
+                "score": 1,
+                "skill_id": "KS127F36326KXDQ104H6"
+            },
+            {
+                "doc_node_id": [
+                    146,
+                    147
+                ],
+                "doc_node_value": "deep learning",
+                "score": 1,
+                "skill_id": "KSBZ9LW988KC56I219SP"
+            },
+            {
+                "doc_node_id": [
+                    152,
+                    153
+                ],
+                "doc_node_value": "regular expression",
+                "score": 1,
+                "skill_id": "KS128GV6Y1LLQBBCNMFH"
+            },
+            {
+                "doc_node_id": [
+                    3
+                ],
+                "doc_node_value": "com",
+                "score": 1,
+                "skill_id": "KS7G7K873Z87GNGYHQKB"
+            },
+            {
+                "doc_node_id": [
+                    228
+                ],
+                "doc_node_value": "com",
+                "score": 1,
+                "skill_id": "KS7G7K873Z87GNGYHQKB"
+            }
+        ],
+        "ngram_scored": [
+            {
+                "doc_node_id": [
+                    13
+                ],
+                "doc_node_value": "innovation",
+                "len": 1,
+                "score": 1.0,
+                "skill_id": "KS1253H61TTR1FZWSRH4",
+                "type": "lowSurf"
+            },
+            {
+                "doc_node_id": [
+                    15,
+                    16,
+                    17
+                ],
+                "doc_node_value": "solve complex problems",
+                "len": 3,
+                "score": 0.9,
+                "skill_id": "ES80E93EF8629D5C793C",
+                "type": "oneToken"
+            },
+            {
+                "doc_node_id": [
+                    31
+                ],
+                "doc_node_value": "decisions",
+                "len": 1,
+                "score": 0.6889442801475525,
+                "skill_id": "ES51D61B69546A4FAEC7",
+                "type": "lowSurf"
+            },
+            {
+                "doc_node_id": [
+                    99
+                ],
+                "doc_node_value": "present",
+                "len": 1,
+                "score": 0.6660163402557373,
+                "skill_id": "KS1280B68GD79P4WMVYW",
+                "type": "lowSurf"
+            },
+            {
+                "doc_node_id": [
+                    112
+                ],
+                "doc_node_value": "java",
+                "len": 1,
+                "score": 1,
+                "skill_id": "KS120076FGP5WGWYMP0F",
+                "type": "fullUni"
+            },
+            {
+                "doc_node_id": [
+                    120
+                ],
+                "doc_node_value": "jdbc",
+                "len": 1,
+                "score": 1,
+                "skill_id": "KS125J75ZYQ7X87SLWW4",
+                "type": "lowSurf"
+            },
+            {
+                "doc_node_id": [
+                    132
+                ],
+                "doc_node_value": "sql",
+                "len": 1,
+                "score": 1,
+                "skill_id": "KS440W865GC4VRBW6LJP",
+                "type": "fullUni"
+            },
+            {
+                "doc_node_id": [
+                    135
+                ],
+                "doc_node_value": "communicate",
+                "len": 1,
+                "score": 0.7637882232666016,
+                "skill_id": "KS122556LMQ829GZCCRV",
+                "type": "lowSurf"
+            },
+            {
+                "doc_node_id": [
+                    150
+                ],
+                "doc_node_value": "python",
+                "len": 1,
+                "score": 1,
+                "skill_id": "KS125LS6N7WP4S6SFTCK",
+                "type": "fullUni"
+            },
+            {
+                "doc_node_id": [
+                    155
+                ],
+                "doc_node_value": "nltk",
+                "len": 1,
+                "score": 1,
+                "skill_id": "KS1271Z6ZP3RPMKFFCK7",
+                "type": "fullUni"
+            },
+            {
+                "doc_node_id": [
+                    156
+                ],
+                "doc_node_value": "libraries",
+                "len": 1,
+                "score": 0.8477289080619812,
+                "skill_id": "KS122086PPY11B2M1G6N",
+                "type": "lowSurf"
+            },
+            {
+                "doc_node_id": [
+                    160,
+                    161
+                ],
+                "doc_node_value": "data cleaning",
+                "len": 2,
+                "score": 2,
+                "skill_id": "KS0621DNOKPP81RCY02X",
+                "type": "lowSurf"
+            },
+            {
+                "doc_node_id": [
+                    174
+                ],
+                "doc_node_value": "vector",
+                "len": 1,
+                "score": 0.7296417355537415,
+                "skill_id": "KSX2B4EIHFXX3HJJUKMV",
+                "type": "lowSurf"
+            },
+            {
+                "doc_node_id": [
+                    177
+                ],
+                "doc_node_value": "programming",
+                "len": 1,
+                "score": 1,
+                "skill_id": "KS123655VLGBXHL0VPDW",
+                "type": "fullUni"
+            },
+            {
+                "doc_node_id": [
+                    178
+                ],
+                "doc_node_value": "c",
+                "len": 1,
+                "score": 1,
+                "skill_id": "KS1200364C9C1LK3V5Q1",
+                "type": "fullUni"
+            },
+            {
+                "doc_node_id": [
+                    179
+                ],
+                "doc_node_value": "python",
+                "len": 1,
+                "score": 1,
+                "skill_id": "KS125LS6N7WP4S6SFTCK",
+                "type": "fullUni"
+            },
+            {
+                "doc_node_id": [
+                    180
+                ],
+                "doc_node_value": "sql",
+                "len": 1,
+                "score": 1,
+                "skill_id": "KS440W865GC4VRBW6LJP",
+                "type": "fullUni"
+            },
+            {
+                "doc_node_id": [
+                    181,
+                    182,
+                    183
+                ],
+                "doc_node_value": "marketing email marketing",
+                "len": 3,
+                "score": 3,
+                "skill_id": "KS1238J5Z67LVF879RRH",
+                "type": "lowSurf"
+            },
+            {
+                "doc_node_id": [
+                    181,
+                    185
+                ],
+                "doc_node_value": "marketing information",
+                "len": 2,
+                "score": 0.6333333333333333,
+                "skill_id": "KS1265M6KSNGPBM69GX7",
+                "type": "oneToken"
+            },
+            {
+                "doc_node_id": [
+                    183,
+                    184
+                ],
+                "doc_node_value": "marketing personal",
+                "len": 2,
+                "score": 2,
+                "skill_id": "KS127Q36CC7Z7R90R0H0",
+                "type": "lowSurf"
+            },
+            {
+                "doc_node_id": [
+                    200,
+                    201
+                ],
+                "doc_node_value": "language urdu",
+                "len": 2,
+                "score": 2,
+                "skill_id": "KS441P46N6FKY9H5Q9Q7",
+                "type": "lowSurf"
+            },
+            {
+                "doc_node_id": [
+                    200,
+                    201
+                ],
+                "doc_node_value": "language urdu",
+                "len": 2,
+                "score": 2,
+                "skill_id": "KS441P46N6FKY9H5Q9Q7",
+                "type": "lowSurf"
+            },
+            {
+                "doc_node_id": [
+                    202
+                ],
+                "doc_node_value": "english",
+                "len": 1,
+                "score": 1,
+                "skill_id": "KS123K75YYK8VGH90NCS",
+                "type": "lowSurf"
+            }
+        ]
+    },
+    "text": "zamam ahmed zamamahmed21@gmail com about i am passionate about using technology to drive innovation and solve complex problems i have interest in software development and data analysis to make in formed decisions i am eager to learn and take on new challenges to further develop my skills if you are looking for a dedicated and results driven team member for your technology focused organization let s connect and work together towards success education matriculation muhammadi public school karachi | 2016 2017 comp uter intermediate aisha bawany gov college karachi | 2017 2019 pre engineering bachelor szabist karachi | 2019 present computer science experience fresh projects employee management system szabist project 2021 basic java project to manage employee s details \u2022 jdbc java database connectivity to connect to databases \u2022 oracle database \u2022 sql used to communicate with the database detect toxic content szabist project 2022 \u2022 deep learning project in python \u2022 regular expression and nltk libraries were used to data cleaning \u2022 glove i s used to to transform text features in to vector form skills programming c python sql marketing email marketing personal information father name anwar ahmed gender male nationality pakistani date of birth 21 oct 2000 language urdu english marital status un married cnic 42201 1792886 3 contact house no # 3 61 big plot shah faisal colony karachi pakistan +92 312 0257971 zamamahmed21@gmail com"
+}

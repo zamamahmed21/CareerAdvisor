@@ -1,96 +1,34 @@
+# imports
+import io
+import spacy
+from spacy.matcher import PhraseMatcher
+from recommendation import Career_Recommendation
+# load default skills data base
+from skillNer.general_params import SKILL_DB
+# import skill extractor
+from skillNer.skill_extractor_class import SkillExtractor
 
-career= {'data':{
-    'Physician Assistant':['68000','131000', '201000', 'PAs, or physician assistants, work collaboratively with physicians, surgeons, and other healthcare professionals in delivering medical care. Their responsibilities involve assessing patients, making diagnoses, and providing treatment.'],
-    'Pediatrician': ['94000','197000', '310000', 'A pediatrician is a medical professional who has received specialized training in the prevention, diagnosis, and treatment of diseases and injuries in children. Additionally, pediatricians assist with the management of other issues that impact children, including developmental disorders as well as behavioral, emotional, and social problems.']
-}}
-
-for key,value in career['data'].items():
-   
-       print(key)
-       print(value[0],value[1],value[2])
-       print(value[3] )
-
-
-import sqlite3
-import os
-
-conn = sqlite3.connect('CareerAdDB.db')
-cursor = conn.cursor()
-
-email = 'sameermoin@gmail.com'  
-
-cursor.execute("SELECT resume_data FROM users WHERE email = ?;", (email,))
-blob_data = cursor.fetchone()[0]
-
-file_path = os.path.join('test_data', 'output.pdf')
-with open(file_path, 'wb') as file:
-    file.write(blob_data)
-
-cursor.close()
-conn.close()
-
-print(f"PDF file saved to: {file_path}")
+# init params of skill extractor
+nlp = spacy.load("en_core_web_lg")
+# init skill extractor
+skill_extractor = SkillExtractor(nlp, SKILL_DB, PhraseMatcher)
 
 
+# extract skills from job_description
+job_description = """
+Develop, test, and deploy software applications using programming languages such as Python, Java, or C++
+Collaborate with product managers and stakeholders to gather and analyze requirements
+Design and implement software solutions that meet business needs and adhere to best practices
+Write clean, efficient, and maintainable code
+Perform code reviews and provide constructive feedback to ensure code quality
+Debug and resolve software defects and issues
+Collaborate with cross-functional teams, including UX/UI designers and QA engineers, to deliver high-quality software
+Stay updated with the latest trends and technologies in software development and implement them when applicable
 
+"""
+from recommendation import Career_Recommendation
+career_rec = Career_Recommendation()
+resume_text = career_rec.read_resume_text("resume\zamamahmed21@gmail.com.pdf")
 
-
-# import sqlite3
-# import tempfile
-# import os
-# import pdfkit
-
-# import pdfkit
-
-
-
-
-# def check_resume_for_email(email):
-#     db_name = 'CareerAdDB.db'  # 
-#     save_location = 'test_data/'  
-#     pdf_options = {
-#         'page-size': 'Letter',
-#         'margin-top': '0',
-#         'margin-right': '0',
-#         'margin-bottom': '0',
-#         'margin-left': '0',
-#     }
-
-#     conn = sqlite3.connect(db_name)
-#     cursor = conn.cursor()
-
-#     cursor.execute("SELECT resume_data FROM users WHERE email=?", (email,))
-#     result = cursor.fetchone()
-
-#     conn.close()
-
-#     if result:
-#         resume_data = result[0]
-#         # Save the resume data to a temporary file
-#         with tempfile.NamedTemporaryFile(suffix='.html', delete=False) as temp_file:
-#             temp_file.write(resume_data)
-#             temp_filename = temp_file.name
-
-#         # Extract the filename from the temporary file path
-#         resume_filename = os.path.basename(temp_filename)
-
-#         # Create the save location directory if it doesn't exist
-#         os.makedirs(save_location, exist_ok=True)
-
-#         # Convert the HTML file to PDF
-#         pdf_filename = os.path.splitext(resume_filename)[0] + '.pdf'
-#         pdf_path = os.path.join(save_location, pdf_filename)
-#         pdfkit.from_file(temp_filename, pdf_path, options=pdf_options)
-
-#         # Remove the temporary HTML file
-#         os.remove(temp_filename)
-
-#         print(f"Resume found for email '{email}'. Saved as PDF: {pdf_path}")
-#     else:
-#         print(f"No resume found for email '{email}'")
-
-
-# if __name__ == '__main__':
-#     email = 'zamamahmed21@gmail.com'  # Specify the email to check the resume for
-#     check_resume_for_email(email)
-
+annotations = skill_extractor.annotate((resume_text))
+print(annotations)
