@@ -3,6 +3,9 @@ from time import sleep
 from flask import Flask, session
 import os
 import PyPDF2
+import datetime
+import bcrypt
+
 
 app = Flask(__name__)
 app.secret_key = 'AC'
@@ -129,34 +132,42 @@ class Career_Recommendation():
 
     def register(self,full_name,email,password,dob,user_type):
     
+        # self.conn = sqlite3.connect(self.db_name)
+        # cursor = self.conn.cursor()
+        # cursor.execute("INSERT INTO users (full_name, email, password, dob, user_type) VALUES (?, ?, ?, ?, ?)",
+        #             (full_name, email, password, dob, user_type))
+        # self.conn.commit()
+        # self.conn.close()
+        hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+
         self.conn = sqlite3.connect(self.db_name)
         cursor = self.conn.cursor()
         cursor.execute("INSERT INTO users (full_name, email, password, dob, user_type) VALUES (?, ?, ?, ?, ?)",
-                    (full_name, email, password, dob, user_type))
+                    (full_name, email, hashed_password.decode('utf-8'), dob, user_type))
         self.conn.commit()
         self.conn.close()
         
     def verify_login(self, email, password):
         self.conn = sqlite3.connect(self.db_name)
         cursor = self.conn.cursor()
-        cursor.execute("SELECT * FROM users WHERE email = ? AND password = ?", (email, password))
+        cursor.execute("SELECT * FROM users WHERE email = ?", (email,))
         user = cursor.fetchone()
         self.conn.close()
 
         if user:
-            session['email'] = email
-            user_dict={
-            'id':user[0],
-            
-            'full_name': user[1].capitalize(),
-            'email': user[2],
-            'password': user[3],
-            'dob': user[4],
-            'user_type': user[5]
-            }
-            return user_dict
-        else:
-            return None
+            stored_password = user[3]  # Fetch the stored password from the database
+            if bcrypt.checkpw(password.encode('utf-8'), stored_password.encode('utf-8')):
+                session['email'] = email
+                user_dict = {
+                    'id': user[0],
+                    'full_name': user[1].capitalize(),
+                    'email': user[2],
+                    'password': user[3],
+                    'dob': user[4],
+                    'user_type': user[5]
+                }
+                return user_dict
+        return None
         
    
     def save_resume(self, resume_file):
@@ -179,7 +190,7 @@ class Career_Recommendation():
         save_path = os.path.join('resume', save_filename)
         
         resume_file.save(save_path)
-        resume_data = career_rec.get_resume_pdf(save_path)
+        # resume_data = career_rec.get_resume_pdf(save_path)
 
         print(save_path)
         return save_path
@@ -191,34 +202,19 @@ class Career_Recommendation():
         email = session.get('email')
         
         if email:
-            cursor.execute("UPDATE users SET resume_data = ? WHERE email=?", (resume_path, email,))
-        
+            current_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            cursor.execute("UPDATE users SET resume_data = ?, timestamp = ? WHERE email = ?", (resume_path, current_time, email,))
             self.conn.commit()
             self.conn.close()
             
-            
-            
-    def read_resume_text(self, resume_path):
-        with open(resume_path, 'rb') as file:
-            reader = PyPDF2.PdfReader(file)
-            num_pages = len(reader.pages)
-            resume_text = ""
-            for page in reader.pages:
-                resume_text += page.extract_text()
-
-        return resume_text
+   
         
-            
     def fetch_user_resume_data(self,email):
         self.conn = sqlite3.connect(self.db_name)
         cursor = self.conn.cursor()
-        
-        # Retrieve records based on email
         cursor.execute("SELECT resume_data FROM users WHERE email=?", (email,))
         row = cursor.fetchone()
-
         self.conn.close()
-                
         return row[0]
     
     def update_user_resume_data(self,skills,email):
@@ -230,54 +226,40 @@ class Career_Recommendation():
         
     def update_user_job_data(self,job_description_skills,email):
         self.conn = sqlite3.connect(self.db_name)
-        print(job_description_skills)  # Add this line to check the value
-
+        print(job_description_skills)  
         cursor = self.conn.cursor()
         cursor.execute("UPDATE users SET job_description_skills = ? WHERE email = ?;", (', '.join(job_description_skills), email))
-        
-
-       
         self.conn.commit()
         self.conn.close()    
         # print(f'UPDATE users SET job_description_skills = {job_description_skills} WHERE email={email};')
         
-        
-        
-        
+             
     def get_all_job_description_skills(self):
         self.conn = sqlite3.connect(self.db_name)
         self.conn.row_factory = lambda cursor, row: list(row)
         cursor = self.conn.cursor()
-        
         cursor.execute("SELECT job_description_skills FROM users WHERE user_type='recruiter'and job_description_skills is Not NUll")
         job_description_skills=cursor.fetchall()
-        
         self.conn.close()
         return job_description_skills
+    
     
     def get_all_candidate_skills(self):
         self.conn = sqlite3.connect(self.db_name)
         self.conn.row_factory = lambda cursor, row: list(row)
         cursor = self.conn.cursor()
-        
         cursor.execute("SELECT skills FROM users WHERE user_type='candidate' and skills is Not Null")
         candidate_skills = cursor.fetchall()
-        
         self.conn.close()
         return candidate_skills
 
-        
     
     def fetch_user_job_data(self,email):
         self.conn = sqlite3.connect(self.db_name)
         cursor = self.conn.cursor()
-        
-        # Retrieve records based on email
         cursor.execute("SELECT job_description FROM users WHERE email=?", (email,))
         row = cursor.fetchone()
-
         self.conn.close()
-                
         return row[0]
        
     
@@ -285,7 +267,6 @@ class Career_Recommendation():
         self.conn = sqlite3.connect(self.db_name)
         cursor = self.conn.cursor()
         cursor.execute("UPDATE users SET job_description = ? WHERE email=?;", (job_description,email))
-
         self.conn.commit()
         self.conn.close()
     
@@ -293,14 +274,7 @@ class Career_Recommendation():
     
     
     
-    
-
-        
-
-
-                
-                
-                
+          
                 
 if __name__ == '__main__':
 

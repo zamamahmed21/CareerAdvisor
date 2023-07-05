@@ -1,0 +1,1119 @@
+{
+    "skill_patterns": [
+        [
+            {
+                "LOWER": "email"
+            },
+            {
+                "LOWER": "marketing"
+            }
+        ],
+        [
+            {
+                "LOWER": "web"
+            },
+            {
+                "LOWER": "development"
+            }
+        ],
+        [
+            {
+                "LOWER": "artificial"
+            },
+            {
+                "LOWER": "intelligence"
+            },
+            {
+                "LOWER": "ai"
+            }
+        ],
+        [
+            {
+                "LOWER": "cybersecurity"
+            }
+        ],
+        [
+            {
+                "LOWER": "cloud"
+            },
+            {
+                "LOWER": "computing"
+            }
+        ],
+        [
+            {
+                "LOWER": "data"
+            },
+            {
+                "LOWER": "science"
+            }
+        ],
+        [
+            {
+                "LOWER": "python"
+            }
+        ],
+        [
+            {
+                "LOWER": "python"
+            }
+        ],
+        [
+            {
+                "LOWER": "java"
+            }
+        ],
+        [
+            {
+                "LOWER": "c++"
+            }
+        ],
+        [
+            {
+                "LOWER": "javascript"
+            }
+        ],
+        [
+            {
+                "LOWER": "ruby"
+            }
+        ],
+        [
+            {
+                "LOWER": "recruitment"
+            },
+            {
+                "LOWER": "and"
+            },
+            {
+                "LOWER": "selection"
+            }
+        ],
+        [
+            {
+                "LOWER": "employee"
+            },
+            {
+                "LOWER": "onboarding"
+            }
+        ],
+        [
+            {
+                "LOWER": "job"
+            },
+            {
+                "LOWER": "analysis"
+            },
+            {
+                "LOWER": "and"
+            },
+            {
+                "LOWER": "job"
+            },
+            {
+                "LOWER": "description"
+            },
+            {
+                "LOWER": "writing"
+            }
+        ],
+        [
+            {
+                "LOWER": "interviewing"
+            },
+            {
+                "LOWER": "techniques"
+            }
+        ],
+        [
+            {
+                "LOWER": "talent"
+            },
+            {
+                "LOWER": "acquisition"
+            }
+        ],
+        [
+            {
+                "LOWER": "candidate"
+            },
+            {
+                "LOWER": "assessment"
+            },
+            {
+                "LOWER": "and"
+            },
+            {
+                "LOWER": "evaluation"
+            }
+        ],
+        [
+            {
+                "LOWER": "employer"
+            },
+            {
+                "LOWER": "branding"
+            }
+        ],
+        [
+            {
+                "LOWER": "employee"
+            },
+            {
+                "LOWER": "engagement"
+            }
+        ],
+        [
+            {
+                "LOWER": "performance"
+            },
+            {
+                "LOWER": "management"
+            }
+        ],
+        [
+            {
+                "LOWER": "compensation"
+            },
+            {
+                "LOWER": "and"
+            },
+            {
+                "LOWER": "benefits"
+            },
+            {
+                "LOWER": "administration"
+            }
+        ],
+        [
+            {
+                "LOWER": "training"
+            },
+            {
+                "LOWER": "and"
+            },
+            {
+                "LOWER": "development"
+            }
+        ],
+        [
+            {
+                "LOWER": "succession"
+            },
+            {
+                "LOWER": "planning"
+            }
+        ],
+        [
+            {
+                "LOWER": "employee"
+            },
+            {
+                "LOWER": "relations"
+            }
+        ],
+        [
+            {
+                "LOWER": "conflict"
+            },
+            {
+                "LOWER": "resolution"
+            }
+        ],
+        [
+            {
+                "LOWER": "labor"
+            },
+            {
+                "LOWER": "laws"
+            },
+            {
+                "LOWER": "and"
+            },
+            {
+                "LOWER": "compliance"
+            }
+        ],
+        [
+            {
+                "LOWER": "policy"
+            },
+            {
+                "LOWER": "development"
+            }
+        ],
+        [
+            {
+                "LOWER": "data"
+            },
+            {
+                "LOWER": "analysis"
+            },
+            {
+                "LOWER": "and"
+            },
+            {
+                "LOWER": "reporting"
+            }
+        ],
+        [
+            {
+                "LOWER": "is"
+            },
+            {
+                "LOWER": "management"
+            },
+            {
+                "LOWER": "(human"
+            },
+            {
+                "LOWER": "resources"
+            },
+            {
+                "LOWER": "information"
+            },
+            {
+                "LOWER": "system)"
+            }
+        ],
+        [
+            {
+                "LOWER": "employee"
+            },
+            {
+                "LOWER": "wellness"
+            },
+            {
+                "LOWER": "programs"
+            }
+        ],
+        [
+            {
+                "LOWER": "change"
+            },
+            {
+                "LOWER": "management"
+            }
+        ],
+        [
+            {
+                "LOWER": "diversity"
+            },
+            {
+                "LOWER": "and"
+            },
+            {
+                "LOWER": "inclusion"
+            }
+        ],
+        [
+            {
+                "LOWER": "talent"
+            },
+            {
+                "LOWER": "management"
+            }
+        ],
+        [
+            {
+                "LOWER": "workforce"
+            },
+            {
+                "LOWER": "planning"
+            }
+        ],
+        [
+            {
+                "LOWER": "strategy"
+            },
+            {
+                "LOWER": "development"
+            }
+        ],
+        [
+            {
+                "LOWER": "budgeting"
+            },
+            {
+                "LOWER": "and"
+            },
+            {
+                "LOWER": "forecasting"
+            }
+        ],
+        [
+            {
+                "LOWER": "metrics"
+            },
+            {
+                "LOWER": "and"
+            },
+            {
+                "LOWER": "analytics"
+            }
+        ],
+        [
+            {
+                "LOWER": "employee"
+            },
+            {
+                "LOWER": "satisfaction"
+            },
+            {
+                "LOWER": "surveys"
+            }
+        ],
+        [
+            {
+                "LOWER": "employee"
+            },
+            {
+                "LOWER": "retention"
+            },
+            {
+                "LOWER": "strategies"
+            }
+        ],
+        [
+            {
+                "LOWER": "organizational"
+            },
+            {
+                "LOWER": "development"
+            }
+        ],
+        [
+            {
+                "LOWER": "employee"
+            },
+            {
+                "LOWER": "performance"
+            },
+            {
+                "LOWER": "evaluation"
+            }
+        ],
+        [
+            {
+                "LOWER": "employee"
+            },
+            {
+                "LOWER": "coaching"
+            },
+            {
+                "LOWER": "and"
+            },
+            {
+                "LOWER": "development"
+            }
+        ],
+        [
+            {
+                "LOWER": "employee"
+            },
+            {
+                "LOWER": "recognition"
+            },
+            {
+                "LOWER": "programs"
+            }
+        ],
+        [
+            {
+                "LOWER": "project"
+            },
+            {
+                "LOWER": "management"
+            }
+        ],
+        [
+            {
+                "LOWER": "employee"
+            },
+            {
+                "LOWER": "benefits"
+            },
+            {
+                "LOWER": "management"
+            }
+        ],
+        [
+            {
+                "LOWER": "compensation"
+            },
+            {
+                "LOWER": "planning"
+            },
+            {
+                "LOWER": "and"
+            },
+            {
+                "LOWER": "analysis"
+            }
+        ],
+        [
+            {
+                "LOWER": "employee"
+            },
+            {
+                "LOWER": "offboarding"
+            }
+        ],
+        [
+            {
+                "LOWER": "legal"
+            },
+            {
+                "LOWER": "compliance"
+            }
+        ],
+        [
+            {
+                "LOWER": "auditing"
+            }
+        ],
+        [
+            {
+                "LOWER": "risk"
+            },
+            {
+                "LOWER": "management"
+            }
+        ],
+        [
+            {
+                "LOWER": "conflict"
+            },
+            {
+                "LOWER": "mediation"
+            }
+        ],
+        [
+            {
+                "LOWER": "outsourcing"
+            }
+        ],
+        [
+            {
+                "LOWER": "employee"
+            },
+            {
+                "LOWER": "grievance"
+            },
+            {
+                "LOWER": "handling"
+            }
+        ],
+        [
+            {
+                "LOWER": "consultation"
+            }
+        ],
+        [
+            {
+                "LOWER": "vendor"
+            },
+            {
+                "LOWER": "management"
+            }
+        ],
+        [
+            {
+                "LOWER": "policy"
+            },
+            {
+                "LOWER": "communication"
+            },
+            {
+                "LOWER": "and"
+            },
+            {
+                "LOWER": "implementation"
+            }
+        ],
+        [
+            {
+                "LOWER": "technology"
+            },
+            {
+                "LOWER": "management"
+            }
+        ],
+        [
+            {
+                "LOWER": "training"
+            },
+            {
+                "LOWER": "delivery"
+            }
+        ],
+        [
+            {
+                "LOWER": "employee"
+            },
+            {
+                "LOWER": "handbook"
+            },
+            {
+                "LOWER": "development"
+            }
+        ],
+        [
+            {
+                "LOWER": "workplace"
+            },
+            {
+                "LOWER": "safety"
+            },
+            {
+                "LOWER": "and"
+            },
+            {
+                "LOWER": "health"
+            }
+        ],
+        [
+            {
+                "LOWER": "ethics"
+            },
+            {
+                "LOWER": "and"
+            },
+            {
+                "LOWER": "professionalism"
+            }
+        ],
+        [
+            {
+                "LOWER": "performance"
+            },
+            {
+                "LOWER": "metrics"
+            }
+        ],
+        [
+            {
+                "LOWER": "process"
+            },
+            {
+                "LOWER": "improvement"
+            }
+        ],
+        [
+            {
+                "LOWER": "employee"
+            },
+            {
+                "LOWER": "feedback"
+            },
+            {
+                "LOWER": "and"
+            },
+            {
+                "LOWER": "surveys"
+            }
+        ],
+        [
+            {
+                "LOWER": "data"
+            },
+            {
+                "LOWER": "privacy"
+            },
+            {
+                "LOWER": "and"
+            },
+            {
+                "LOWER": "security"
+            }
+        ],
+        [
+            {
+                "LOWER": "knowledge"
+            },
+            {
+                "LOWER": "management"
+            }
+        ],
+        [
+            {
+                "LOWER": "coaching"
+            },
+            {
+                "LOWER": "and"
+            },
+            {
+                "LOWER": "mentoring"
+            }
+        ],
+        [
+            {
+                "LOWER": "compliance"
+            },
+            {
+                "LOWER": "training"
+            }
+        ],
+        [
+            {
+                "LOWER": "employee"
+            },
+            {
+                "LOWER": "relations"
+            },
+            {
+                "LOWER": "training"
+            }
+        ],
+        [
+            {
+                "LOWER": "leadership"
+            },
+            {
+                "LOWER": "development"
+            }
+        ],
+        [
+            {
+                "LOWER": "talent"
+            },
+            {
+                "LOWER": "assessment"
+            }
+        ],
+        [
+            {
+                "LOWER": "employee"
+            },
+            {
+                "LOWER": "engagement"
+            },
+            {
+                "LOWER": "training"
+            }
+        ],
+        [
+            {
+                "LOWER": "conflict"
+            },
+            {
+                "LOWER": "resolution"
+            },
+            {
+                "LOWER": "training"
+            }
+        ],
+        [
+            {
+                "LOWER": "change"
+            },
+            {
+                "LOWER": "management"
+            },
+            {
+                "LOWER": "training"
+            }
+        ],
+        [
+            {
+                "LOWER": "diversity"
+            },
+            {
+                "LOWER": "and"
+            },
+            {
+                "LOWER": "inclusion"
+            },
+            {
+                "LOWER": "training"
+            }
+        ],
+        [
+            {
+                "LOWER": "succession"
+            },
+            {
+                "LOWER": "planning"
+            },
+            {
+                "LOWER": "training"
+            }
+        ],
+        [
+            {
+                "LOWER": "performance"
+            },
+            {
+                "LOWER": "management"
+            },
+            {
+                "LOWER": "training"
+            }
+        ],
+        [
+            {
+                "LOWER": "recruitment"
+            },
+            {
+                "LOWER": "training"
+            }
+        ],
+        [
+            {
+                "LOWER": "compensation"
+            },
+            {
+                "LOWER": "and"
+            },
+            {
+                "LOWER": "benefits"
+            },
+            {
+                "LOWER": "training"
+            }
+        ],
+        [
+            {
+                "LOWER": "is"
+            },
+            {
+                "LOWER": "training"
+            }
+        ],
+        [
+            {
+                "LOWER": "employee"
+            },
+            {
+                "LOWER": "wellness"
+            },
+            {
+                "LOWER": "training"
+            }
+        ],
+        [
+            {
+                "LOWER": "training"
+            },
+            {
+                "LOWER": "evaluation"
+            }
+        ],
+        [
+            {
+                "LOWER": "training"
+            },
+            {
+                "LOWER": "needs"
+            },
+            {
+                "LOWER": "analysis"
+            }
+        ],
+        [
+            {
+                "LOWER": "training"
+            },
+            {
+                "LOWER": "program"
+            },
+            {
+                "LOWER": "design"
+            }
+        ],
+        [
+            {
+                "LOWER": "training"
+            },
+            {
+                "LOWER": "delivery"
+            },
+            {
+                "LOWER": "methods"
+            }
+        ],
+        [
+            {
+                "LOWER": "training"
+            },
+            {
+                "LOWER": "material"
+            },
+            {
+                "LOWER": "development"
+            }
+        ],
+        [
+            {
+                "LOWER": "training"
+            },
+            {
+                "LOWER": "evaluation"
+            },
+            {
+                "LOWER": "metrics"
+            }
+        ],
+        [
+            {
+                "LOWER": "training"
+            },
+            {
+                "LOWER": "roi"
+            },
+            {
+                "LOWER": "analysis"
+            }
+        ],
+        [
+            {
+                "LOWER": "talent"
+            },
+            {
+                "LOWER": "acquisition"
+            },
+            {
+                "LOWER": "strategies"
+            }
+        ],
+        [
+            {
+                "LOWER": "employer"
+            },
+            {
+                "LOWER": "branding"
+            },
+            {
+                "LOWER": "strategies"
+            }
+        ],
+        [
+            {
+                "LOWER": "employee"
+            },
+            {
+                "LOWER": "engagement"
+            },
+            {
+                "LOWER": "strategies"
+            }
+        ],
+        [
+            {
+                "LOWER": "performance"
+            },
+            {
+                "LOWER": "management"
+            },
+            {
+                "LOWER": "strategies"
+            }
+        ],
+        [
+            {
+                "LOWER": "succession"
+            },
+            {
+                "LOWER": "planning"
+            },
+            {
+                "LOWER": "strategies"
+            }
+        ],
+        [
+            {
+                "LOWER": "employee"
+            },
+            {
+                "LOWER": "relations"
+            },
+            {
+                "LOWER": "strategies"
+            }
+        ],
+        [
+            {
+                "LOWER": "diversity"
+            },
+            {
+                "LOWER": "and"
+            },
+            {
+                "LOWER": "inclusion"
+            },
+            {
+                "LOWER": "strategies"
+            }
+        ],
+        [
+            {
+                "LOWER": "change"
+            },
+            {
+                "LOWER": "management"
+            },
+            {
+                "LOWER": "strategies"
+            }
+        ],
+        [
+            {
+                "LOWER": "compensation"
+            },
+            {
+                "LOWER": "and"
+            },
+            {
+                "LOWER": "benefits"
+            },
+            {
+                "LOWER": "strategies"
+            }
+        ],
+        [
+            {
+                "LOWER": "training"
+            },
+            {
+                "LOWER": "and"
+            },
+            {
+                "LOWER": "development"
+            },
+            {
+                "LOWER": "strategies"
+            }
+        ],
+        [
+            {
+                "LOWER": "organizational"
+            },
+            {
+                "LOWER": "development"
+            },
+            {
+                "LOWER": "strategies"
+            }
+        ],
+        [
+            {
+                "LOWER": "employee"
+            },
+            {
+                "LOWER": "retention"
+            },
+            {
+                "LOWER": "strategies"
+            }
+        ],
+        [
+            {
+                "LOWER": "workforce"
+            },
+            {
+                "LOWER": "planning"
+            },
+            {
+                "LOWER": "strategies"
+            }
+        ],
+        [
+            {
+                "LOWER": "policy"
+            },
+            {
+                "LOWER": "development"
+            },
+            {
+                "LOWER": "strategies"
+            }
+        ],
+        [
+            {
+                "LOWER": "is"
+            },
+            {
+                "LOWER": "strategies"
+            }
+        ],
+        [
+            {
+                "LOWER": "employee"
+            },
+            {
+                "LOWER": "wellness"
+            },
+            {
+                "LOWER": "strategies"
+            }
+        ],
+        [
+            {
+                "LOWER": "conflict"
+            },
+            {
+                "LOWER": "resolution"
+            },
+            {
+                "LOWER": "strategies"
+            }
+        ],
+        [
+            {
+                "LOWER": "talent"
+            },
+            {
+                "LOWER": "management"
+            },
+            {
+                "LOWER": "strategies"
+            }
+        ],
+        [
+            {
+                "LOWER": "employee"
+            },
+            {
+                "LOWER": "offboarding"
+            },
+            {
+                "LOWER": "strategies"
+            }
+        ],
+        [
+            {
+                "LOWER": "compliance"
+            },
+            {
+                "LOWER": "strategies"
+            }
+        ],
+        [
+            {
+                "LOWER": "outsourcing"
+            },
+            {
+                "LOWER": "strategies"
+            }
+        ],
+        [
+            {
+                "LOWER": "risk"
+            },
+            {
+                "LOWER": "management"
+            },
+            {
+                "LOWER": "strategies"
+            }
+        ],
+        [
+            {
+                "LOWER": "strategic"
+            },
+            {
+                "LOWER": "planning"
+            }
+        ]
+    ]
+}

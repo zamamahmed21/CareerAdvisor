@@ -31,7 +31,7 @@
 					<nav id="nav">
 						<ul>
 							<li><a href="#intro" class="active">Intro</a></li>
-							<li><a href="#first">Career Match</a></li>
+							<li><a href="/candidate_details">Career Match</a></li>
 							<li><a href="#second">GPT Career Match</a></li>
 							<li><a href="/about">About us</a></li>
 							<li><a href="/logout">Logout</a></li>
@@ -47,7 +47,7 @@
 							<div>
 								<div class="content">
 									<header class="major">
-										<h2>Welcome, {{full_name}}</h2>
+										<h2>Welcome Candidate, {{full_name}}</h2>
 									</header>
 									<p>Unleash the Power of Job Scout! Simply Upload Your Resume Highlighting Your Relevant Skills, and Let Job Scout Seamlessly Navigate the Rest!</p>
 									<form action="{{ url_for('upload_resume') }}" method="POST" enctype="multipart/form-data">
@@ -62,10 +62,11 @@
 							{% endif %}
 									<hr>
 									
+									
+									<p></p>	
 						</section>
 						
 						  
-						
 						
 						
 						
@@ -135,19 +136,7 @@
 								</footer>
 							</section>
 
-						<!-- Get Started -->
-							<section id="cta" class="main special">
-								<header class="major">
-									<h2>Job Scout</h2>
-									<p>Job seekers can upload their resumes while recruiters post job listings, and an advanced matching system recommends the most suitable candidates for each job to the recruiters.</p>
-								</header>
-								<footer class="major">
-									<ul class="actions special">
-										<li><a href="/register" class="button primary">Register</a></li>
-										<li><a href="/login" class="button">Login</a></li>
-									</ul>
-								</footer>
-							</section>
+						
 
 					</div>
 
